@@ -1,22 +1,22 @@
 
 
-    
-        {{singleCpu.description}}
-
         <a href="/cpu/{{singleCpu._id}}/edit">
             <button>
-                Edit This Cpu Report
+                Choose other CPU
             </button>
         </a>
         
-        <div class="title">Date Created:</div>
-        {{singleCpu.createdAt}}
+        <div class="title">Manufacturer:</div>
+        {{singleCpu.brand}}
 
-        <div class="title">Status:</div>
-        {{singleCpu.status}}
+        <div class="title">Number of Cores:</div>
+        {{singleCpu.cores}}
 
-        <div class="title">Cpu Priority:</div>
-        {{singleCpu.priority}}
+        <div class="title">Highest Core Frequency:</div>
+        {{singleCpu.frequency}}
+
+        <div class="title">Hyperthreading Enabled:</div>
+        {{singleCpu.hyperthreading}}
 
         <form action="/cpu/{{singleCpu._id}}?_method=DELETE" method="POST">
             <input type="submit" value="Delete Cpu">

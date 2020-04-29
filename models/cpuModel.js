@@ -2,16 +2,10 @@ const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
 
 const cpuSchema = new Schema({
-    description: {
-    type: String,
-    required: true},
-    createdAt: Date,
-    status: String,
-    priority: {
-        type: String,
-        enum: ['High', 'Medium', 'Low'],
-        required: true
-    }
+    brand: String,
+    cores: Number,
+    frequency: Number,
+    hyperthreading: String
 })
 
 const cpuList = mongoose.model('cpu', cpuSchema)
