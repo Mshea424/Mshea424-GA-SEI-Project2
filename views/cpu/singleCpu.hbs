@@ -1,0 +1,23 @@
+
+
+    
+        {{singleCpu.description}}
+
+        <a href="/cpu/{{singleCpu._id}}/edit">
+            <button>
+                Edit This Cpu Report
+            </button>
+        </a>
+        
+        <div class="title">Date Created:</div>
+        {{singleCpu.createdAt}}
+
+        <div class="title">Status:</div>
+        {{singleCpu.status}}
+
+        <div class="title">Cpu Priority:</div>
+        {{singleCpu.priority}}
+
+        <form action="/cpu/{{singleCpu._id}}?_method=DELETE" method="POST">
+            <input type="submit" value="Delete Cpu">
+        </form>

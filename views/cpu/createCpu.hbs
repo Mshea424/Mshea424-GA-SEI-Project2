@@ -1,0 +1,20 @@
+<h1>Report New Cpu</h1>
+
+<form action="/cpu" method="POST">
+    <label>Cpu Description:</label>
+    <input type="text" name="description" placeholder="input required" required/>
+    <label>Date of Report:</label>
+    <input id='date' type="Date" name="createdAt"/>
+    <label>Status:</label>
+    <input type="text" name="status" value="open"/>
+    <label>Level Of Priority:</label>
+    <select type="text" name="priority" required/>
+      <option>High</option>
+      <option>Medium</option>
+      <option>Low</option>
+    </select>
+    <input type="submit" value ="Report Cpu"/>
+</form>
+<script>
+    document.querySelector("#date").valueAsDate = new Date();
+</script>

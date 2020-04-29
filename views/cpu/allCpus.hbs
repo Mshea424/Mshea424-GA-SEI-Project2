@@ -1,0 +1,30 @@
+<h1>Cpus List:</h1>
+
+<a href="/cpu/new">
+    <button>
+        Report New Cpu
+    </button>
+</a>
+
+{{#each allCpus}}
+    <a href="/cpu/{{_id}}">
+        <div class="cpu-item">
+            <div class ="item">
+                <div class="title">Description:</div>
+                {{description}}
+            </div>
+            <div class ="item">
+                <div class="title">Date Created:</div>
+                {{createdAt}}
+            </div>
+            <div class ="item">
+                <div class="title">Status:</div>
+                {{status}}
+            </div>
+            <div class ="item">
+                <div class="title">Priority Level:</div>
+                {{priority}}
+            </div>
+        </div>
+    </a>
+{{/each}}

@@ -1,3 +1,21 @@
 body {
     background-color: rgb(218, 230, 237);
 }
+
+.cpu-item {
+    display: flex;
+    border-top: 2px solid black;
+    margin-top: 10px;
+    background-color: white;
+}
+a {
+    text-decoration: none;
+}
+.item {
+    margin: 0 auto;
+    padding: 10px;
+    line-height: 30px;
+}
+.title {
+    font-size: 20px;
+}
