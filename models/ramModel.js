@@ -1,44 +1,45 @@
 const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
 
-const cpuSchema = new Schema({
+const ramSchema = new Schema({
     brand: String,
-    cores: Number,
-    frequency: Number,
-    hyperthreading: String
+    memory: String,
+    ddr: String,
+    frequency: String
+    
 })
 
-const cpuList = mongoose.model('cpu', cpuSchema)
+const ramList = mongoose.model('ram', ramSchema)
 
 // get/read all
-function getAllCpus() {
-    return cpuList.find({})
+function getAllRams() {
+    return ramList.find({})
 }
 
 // get/read one
-function getOneCpu(id) {
-    return cpuList.findById(id)
+function getOneRam(id) {
+    return ramList.findById(id)
 }
 
 // post/create
-function createCpu(newCpu) {
-return cpuList.create(newCpu)
+function createRam(newRam) {
+return ramList.create(newRam)
 }
 
 // put/update
-function updateCpu(id, newCpu) {
-    return cpuList.findByIdAndUpdate(id, newCpu)
+function updateRam(id, newRam) {
+    return ramList.findByIdAndUpdate(id, newRam)
 }
 
 // delete
-function deleteCpu(id) {
-    return cpuList.findByIdAndDelete(id)
+function deleteRam(id) {
+    return ramList.findByIdAndDelete(id)
 }
 
 module.exports = {
-    getAllCpus,
-    getOneCpu,
-    createCpu,
-    updateCpu,
-    deleteCpu
+    getAllRams,
+    getOneRam,
+    createRam,
+    updateRam,
+    deleteRam
 }

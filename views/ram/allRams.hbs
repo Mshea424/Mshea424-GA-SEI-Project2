@@ -1,29 +1,29 @@
-<h1>Cpus List:</h1>
+<h1>All RAM Kits:</h1>
 
-<a href="/cpu/new">
+<a href="/ram/new">
     <button>
-        Add New CPU
+        Add New RAM Kit
     </button>
 </a>
 
-{{#each allCpus}}
-    <a href="/cpu/{{_id}}">
-        <div class="cpu-item">
+{{#each allRams}}
+    <a href="/ram/{{_id}}">
+        <div class="ram-item">
             <div class ="item">
                 <div class="title">Manufacturer:</div>
                 {{brand}}
             </div>
             <div class ="item">
-                <div class="title">Number of Cores:</div>
-                {{cores}}
+                <div class="title">Memory Capacity:</div>
+                {{memory}}
             </div>
             <div class ="item">
-                <div class="title">Highest Core Frequency:</div>
+                <div class="title">Generation:</div>
+                {{ddr}}
+            </div>
+            <div class ="item">
+                <div class="title">Speed:</div>
                 {{frequency}}
-            </div>
-            <div class ="item">
-                <div class="title">Hyperthreading Enabeled:</div>
-                {{hyperthreading}}
             </div>
         </div>
     </a>

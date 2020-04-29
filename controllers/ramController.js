@@ -1,12 +1,12 @@
 const express = require('express')
-const cpuModel = require('../models/cpuModel.js')
-const cpuRouter = express.Router()
+const ramModel = require('../models/ramModel.js')
+const ramRouter = express.Router()
 
 // get All
-cpuRouter.get('/', (req, res) =>{
-    cpuModel.getAllCpus()
-    .then((allCpus) => {
-        res.render('cpu/allCpus.hbs', {allCpus})
+ramRouter.get('/', (req, res) =>{
+    ramModel.getAllRams()
+    .then((allRams) => {
+        res.render('ram/allRams.hbs', {allRams})
     })
     .catch(err => {
         console.log(err)
@@ -14,16 +14,16 @@ cpuRouter.get('/', (req, res) =>{
     })
 })
 
-//Go to Create new Cpu page
-cpuRouter.get('/new', (req, res) =>{
-    res.render('cpu/createCpu.hbs')
+//Go to Create new Ram page
+ramRouter.get('/new', (req, res) =>{
+    res.render('ram/createRam.hbs')
 })
 
-//Go To Edit Cpu Page
-cpuRouter.get('/:id/edit', (req, res) => {
-    cpuModel.getOneCpu(req.params.id)
-    .then((singleCpu) => {
-        res.render('cpu/editCpu.hbs', {singleCpu})
+//Go To Edit Ram Page
+ramRouter.get('/:id/edit', (req, res) => {
+    ramModel.getOneRam(req.params.id)
+    .then((singleRam) => {
+        res.render('ram/editRam.hbs', {singleRam})
     })
     .catch(err => {
         console.log(err)
@@ -33,10 +33,10 @@ cpuRouter.get('/:id/edit', (req, res) => {
 
 
 // get ONE
-cpuRouter.get('/:id', (req, res) => {
-    cpuModel.getOneCpu(req.params.id)
-    .then((singleCpu) => {
-        res.render('cpu/singleCpu.hbs', {singleCpu})
+ramRouter.get('/:id', (req, res) => {
+    ramModel.getOneRam(req.params.id)
+    .then((singleRam) => {
+        res.render('ram/singleRam.hbs', {singleRam})
     })
     .catch(err => {
         console.log(err)
@@ -45,10 +45,10 @@ cpuRouter.get('/:id', (req, res) => {
 })
 
 // CREATE
-cpuRouter.post('/', (req, res) => {
-    cpuModel.createCpu(req.body)
+ramRouter.post('/', (req, res) => {
+    ramModel.createRam(req.body)
         .then(() => {
-            res.redirect('/cpu')
+            res.redirect('/ram')
         })
         .catch(err => {
             console.log(err)
@@ -57,10 +57,10 @@ cpuRouter.post('/', (req, res) => {
 })
 
 //UPDATE
-cpuRouter.put('/:id', (req, res) => {
-    cpuModel.updateCpu(req.params.id, req.body)
+ramRouter.put('/:id', (req, res) => {
+    ramModel.updateRam(req.params.id, req.body)
         .then(() => {
-            res.redirect(`/cpu/${req.params.id}`)
+            res.redirect(`/ram/${req.params.id}`)
         })
         .catch(err => {
             console.log(err)
@@ -70,10 +70,10 @@ cpuRouter.put('/:id', (req, res) => {
 
 
 //DELETE
-cpuRouter.delete('/:id', (req, res) => {
-    cpuModel.deleteCpu(req.params.id)
+ramRouter.delete('/:id', (req, res) => {
+    ramModel.deleteRam(req.params.id)
         .then(() => {
-            res.redirect('/cpu')
+            res.redirect('/ram')
         })
         .catch(err => {
             console.log(err)
@@ -81,4 +81,4 @@ cpuRouter.delete('/:id', (req, res) => {
         })
 })
 
-module.exports = cpuRouter
+module.exports = ramRouter

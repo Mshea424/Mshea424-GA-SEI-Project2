@@ -1,17 +1,17 @@
-<h1>Change CPU</h1>
+<h1>Change RAM Kit</h1>
 
-<form action="/cpu/{{singleCpu._id}}?_method=PUT" method="POST">
+<form action="/ram/{{singleRam._id}}?_method=PUT" method="POST">
     <label>Manufacturer:</label>
-    <input type="text" name="brand" value="{{singleCpu.cpu}}"/required>
+    <input type="text" name="brand" value="{{singleRam.brand}}"/>
 
-    <label>Number of Cores:</label>
-    <input type="number" name="cores" value="{{singleCpu.cores}}"/>
+    <label>Memory Capacity:</label>
+    <input type="text" name="memory" value="{{singleRam.memory}}"/>
 
-    <label>Status:</label>
-    <input type="text" name="status" value="{{singleCpu.frequency}}"/>
+    <label>Generation:</label>
+    <input type="text" name="ddr" value="{{singleRam.ddr}}"/>
 
-    <label>Hyperthreading Enabeled:</label>
-    <input type="string" name="hyperthreading"/>
+    <label>Speed:</label>
+    <input type="text" name="frequency" value="{{singleRam.frequency}}"/>
     
-    <input type="submit" value ="Change to New CPU"/>
+    <input type="submit" value ="Change to New RAM Kit"/>
 </form>

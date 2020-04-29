@@ -1,23 +1,23 @@
 
 
-        <a href="/cpu/{{singleCpu._id}}/edit">
+        <a href="/ram/{{singleRam._id}}/edit">
             <button>
-                Choose other CPU
+                Choose other RAM Kit
             </button>
         </a>
         
         <div class="title">Manufacturer:</div>
-        {{singleCpu.brand}}
+        {{singleRam.brand}}
 
-        <div class="title">Number of Cores:</div>
-        {{singleCpu.cores}}
+        <div class="title">Memory Capacity:</div>
+        {{singleRam.memory}}
 
-        <div class="title">Highest Core Frequency:</div>
-        {{singleCpu.frequency}}
+        <div class="title">Generation:</div>
+        {{singleRam.ddr}}
 
-        <div class="title">Hyperthreading Enabled:</div>
-        {{singleCpu.hyperthreading}}
+        <div class="title">Speed:</div>
+        {{singleRam.frequency}}
 
-        <form action="/cpu/{{singleCpu._id}}?_method=DELETE" method="POST">
-            <input type="submit" value="Delete Cpu">
+        <form action="/ram/{{singleRam._id}}?_method=DELETE" method="POST">
+            <input type="submit" value="Delete current RAM Kit">
         </form>

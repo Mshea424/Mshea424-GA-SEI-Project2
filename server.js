@@ -3,6 +3,7 @@ const express = require('express')
 const cpuRouter = require('./controllers/cpuController.js')
 const mbRouter = require('./controllers/mbController.js')
 const psuRouter = require('./controllers/psuController.js')
+const ramRouter = require('./controllers/ramController.js')
 
 const methodOverride = require('method-override')
 
@@ -23,6 +24,7 @@ server.get('/', (req, res) => {
 server.use('/cpu', cpuRouter)
 server.use('/mb', mbRouter)
 server.use('/psu', psuRouter)
+server.use('/ram', ramRouter)
 
 server.listen(port, () => {
     console.log(`server started on ${port}`)
