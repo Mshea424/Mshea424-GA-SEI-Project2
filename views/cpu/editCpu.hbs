@@ -2,16 +2,36 @@
 
 <form action="/cpu/{{singleCpu._id}}?_method=PUT" method="POST">
     <label>Manufacturer:</label>
-    <input type="text" name="brand" value="{{singleCpu.brand}}">
+    <select type="text" name="brand" value="{{singleCpu.brand}}">
+        <option>TeamRed.llc</option>
+        <option>TeamBlue.llc</option>
+    </select>
 
     <label>Number of Cores:</label>
-    <input type="number" name="cores" value="{{singleCpu.cores}}"/>
-
-    <label>Status:</label>
-    <input type="text" name="status" value="{{singleCpu.frequency}}"/>
+    <select type="text" name="cores" value="{{singleCpu.cores}}">
+        <option>2</option>
+        <option>4</option>
+        <option>6</option>
+        <option>8</option>
+        <option>16</option>
+        <option>24</option>
+        <option>32</option>
+    </select>
+    
+    <label>Highest Core Frequency:</label>
+    <select type="text" name="status" value="{{singleCpu.frequency}}">
+        <option>2.5 gHz</option>
+        <option>3.2 gHz</option>
+        <option>3.8 gHz</option>
+        <option>4.3 gHz</option>
+        <option>5.0 gHz</option>
+    </select>
 
     <label>Hyperthreading Enabeled:</label>
-    <input type="string" name="hyperthreading"value="{{singleCpu.hyperthreading}}/>
-    
+    <select type="text" name="hyperthreading" value="{{singleCpu.hyperthreading}}">
+        <option>Yes</option>
+        <option>No</option>
+    </select>
+
     <input type="submit" value ="Change to New CPU"/>
 </form>

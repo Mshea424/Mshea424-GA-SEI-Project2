@@ -3,8 +3,8 @@ const Schema = mongoose.Schema
 
 const cpuSchema = new Schema({
     brand: String,
-    cores: Number,
-    frequency: Number,
+    cores: String,
+    frequency: String,
     hyperthreading: String
 })
 

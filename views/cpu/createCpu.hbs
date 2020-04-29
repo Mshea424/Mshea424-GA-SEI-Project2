@@ -2,12 +2,36 @@
 
 <form action="/cpu" method="POST">
     <label>Manufacturer:</label>
-    <input type="text" name="brand"/>
+    <select type="text" name="brand">
+        <option>TeamRed.llc</option>
+        <option>TeamBlue.llc</option>
+    </select>
+
     <label>Number Of Cores:</label>
-    <input type="number" name="cores"/>
+    <select type="text" name="cores">
+        <option>2</option>
+        <option>4</option>
+        <option>6</option>
+        <option>8</option>
+        <option>16</option>
+        <option>24</option>
+        <option>32</option>
+    </select>
+
     <label>Frequency:</label>
-    <input type="number" name="frequency"/>
+    <select type="text" name="frequency">
+        <option>2.5 gHz</option>
+        <option>3.2 gHz</option>
+        <option>3.8 gHz</option>
+        <option>4.3 gHz</option>
+        <option>5.0 gHz</option>
+    </select>
+
     <label>Hyperthreading Enabled:</label>
-    <input type="text" name="hyperthreading" />
+    <select type="text" name="hyperthreading">
+        <option>Yes</option>
+        <option>No</option>
+    </select>
+
     <input type="submit" value ="Add CPU to Build"/>
 </form>
