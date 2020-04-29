@@ -2,7 +2,7 @@
 
 <form action="/cpu/{{singleCpu._id}}?_method=PUT" method="POST">
     <label>Manufacturer:</label>
-    <input type="text" name="brand" value="{{singleCpu.brand}}">
+    <input type="text" name="brand" value="{{singleCpu.cpu}}"/required>
 
     <label>Number of Cores:</label>
     <input type="number" name="cores" value="{{singleCpu.cores}}"/>

@@ -1,0 +1,14 @@
+<h1>Change MB</h1>
+
+<form action="/mb/{{singleMb._id}}?_method=PUT" method="POST">
+    <label>Manufacturer:</label>
+    <input type="text" name="brand" value="{{singleMb.brand}}"/required>
+
+    <label>Size Class:</label>
+    <input type="text" name="class" value="{{singleMb.class}}"/>
+
+    <label>Status:</label>
+    <input type="text" name="socketType" value="{{singleMb.socketType}}"/>
+
+    <input type="submit" value ="Change to New MB"/>
+</form>

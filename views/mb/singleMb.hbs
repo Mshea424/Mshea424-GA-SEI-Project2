@@ -1,0 +1,20 @@
+
+
+        <a href="/mb/{{singleMb._id}}/edit">
+            <button>
+                Choose other MotherBoard
+            </button>
+        </a>
+        
+        <div class="title">Manufacturer:</div>
+        {{singleMb.brand}}
+
+        <div class="title">Size Class:</div>
+        {{singleMb.class}}
+
+        <div class="title">CPU Socket Type:</div>
+        {{singleMb.socketType}}
+
+        <form action="/mb/{{singleMb._id}}?_method=DELETE" method="POST">
+            <input type="submit" value="Delete Mb">
+        </form>

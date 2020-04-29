@@ -1,0 +1,27 @@
+<h1>All Motherboards:</h1>
+
+<a href="/mb/new">
+    <button>
+        Add New MB
+    </button>
+</a>
+
+{{#each allMbs}}
+    <a href="/mb/{{_id}}">
+        <div class="mb-item">
+            <div class ="item">
+                <div class="title">Manufacturer:</div>
+                {{brand}}
+            </div>
+            <div class ="item">
+                <div class="title">Size Class:</div>
+                {{class}}
+            </div>
+            <div class ="item">
+                <div class="title">CPU Socket Type:</div>
+                {{socketType}}
+            </div>
+            </div>
+        </div>
+    </a>
+{{/each}}
