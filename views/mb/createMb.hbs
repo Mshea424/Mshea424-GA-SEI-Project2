@@ -2,10 +2,26 @@
 
 <form action="/mb" method="POST">
     <label>Manufacturer:</label>
-    <input type="text" name="brand"/>
+    <select type="text" name="brand">
+        <option>ACES</option>
+        <option>EBGH</option>
+        <option>Gigabit</option>
+        <option>NSI</option>
+    </select>
+
     <label>Size Class:</label>
-    <input type="text" name="class"/>
+    <select type="text" name="class">
+        <option>Mini-ITX</option>
+        <option>Micro-ATX</option>
+        <option>ATX (standard)</option>
+        <option>XL-ATX</option>
+    </select>
+    
     <label>CPU Socket Type:</label>
-    <input type="text" name="socketType"/>
+    <select type="text" name="socketType">
+        <option>TeamRed</option>
+        <option>TeamBlue</option>
+    </select>
+    
     <input type="submit" value ="Add Motherboard to Build"/>
 </form>

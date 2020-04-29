@@ -2,13 +2,26 @@
 
 <form action="/mb/{{singleMb._id}}?_method=PUT" method="POST">
     <label>Manufacturer:</label>
-    <input type="text" name="brand" value="{{singleMb.brand}}"/required>
+    <select type="text" name="brand" value="{{singleMb.brand}}">
+        <option>ACES</option>
+        <option>EBGH</option>
+        <option>Gigabit</option>
+        <option>NSI</option>
+    </select>
 
     <label>Size Class:</label>
-    <input type="text" name="class" value="{{singleMb.class}}"/>
+    <select type="text" name="class" value="{{singleMb.class}}">
+        <option>Mini-ITX</option>
+        <option>Micro-ATX</option>
+        <option>ATX (standard)</option>
+        <option>XL-ATX</option>
+    </select>
 
     <label>Status:</label>
-    <input type="text" name="socketType" value="{{singleMb.socketType}}"/>
+    <select type="text" name="socketType" value="{{singleMb.socketType}}">
+        <option>TeamRed</option>
+        <option>TeamBlue</option>
+    </select>
 
     <input type="submit" value ="Change to New MB"/>
 </form>
