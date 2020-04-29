@@ -1,23 +1,23 @@
 
 
-        <a href="/cpu/{{singleCpu._id}}/edit">
+        <a href="/psu/{{singlePsu._id}}/edit">
             <button>
-                Choose other CPU
+                Choose other Power Supply Unit
             </button>
         </a>
         
         <div class="title">Manufacturer:</div>
-        {{singleCpu.brand}}
+        {{singlePsu.brand}}
 
-        <div class="title">Number of Cores:</div>
-        {{singleCpu.cores}}
+        <div class="title">Max Power Output:</div>
+        {{singlePsu.watts}}
 
-        <div class="title">Highest Core Frequency:</div>
-        {{singleCpu.frequency}}
+        <div class="title">80+ Efficiency Rating:</div>
+        {{singlePsu.efficiency}}
 
-        <div class="title">Hyperthreading Enabled:</div>
-        {{singleCpu.hyperthreading}}
+        <div class="title">Modularity:</div>
+        {{singlePsu.modularity}}
 
-        <form action="/cpu/{{singleCpu._id}}?_method=DELETE" method="POST">
-            <input type="submit" value="Delete Cpu">
+        <form action="/psu/{{singlePsu._id}}?_method=DELETE" method="POST">
+            <input type="submit" value="Delete Current Power Supply">
         </form>

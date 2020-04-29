@@ -1,44 +1,44 @@
 const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
 
-const cpuSchema = new Schema({
+const psuSchema = new Schema({
     brand: String,
-    cores: Number,
-    frequency: Number,
-    hyperthreading: String
+    watts: String,
+    efficiency: String,
+    modularity: String
 })
 
-const cpuList = mongoose.model('cpu', cpuSchema)
+const psuList = mongoose.model('psu', psuSchema)
 
 // get/read all
-function getAllCpus() {
-    return cpuList.find({})
+function getAllPsus() {
+    return psuList.find({})
 }
 
 // get/read one
-function getOneCpu(id) {
-    return cpuList.findById(id)
+function getOnePsu(id) {
+    return psuList.findById(id)
 }
 
 // post/create
-function createCpu(newCpu) {
-return cpuList.create(newCpu)
+function createPsu(newPsu) {
+return psuList.create(newPsu)
 }
 
 // put/update
-function updateCpu(id, newCpu) {
-    return cpuList.findByIdAndUpdate(id, newCpu)
+function updatePsu(id, newPsu) {
+    return psuList.findByIdAndUpdate(id, newPsu)
 }
 
 // delete
-function deleteCpu(id) {
-    return cpuList.findByIdAndDelete(id)
+function deletePsu(id) {
+    return psuList.findByIdAndDelete(id)
 }
 
 module.exports = {
-    getAllCpus,
-    getOneCpu,
-    createCpu,
-    updateCpu,
-    deleteCpu
+    getAllPsus,
+    getOnePsu,
+    createPsu,
+    updatePsu,
+    deletePsu
 }

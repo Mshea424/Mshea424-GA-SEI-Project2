@@ -1,13 +1,13 @@
-<h1>Add New Cpu</h1>
+<h1>Add New Power Supply</h1>
 
-<form action="/cpu" method="POST">
+<form action="/psu" method="POST">
     <label>Manufacturer:</label>
     <input type="text" name="brand"/>
-    <label>Number Of Cores:</label>
-    <input type="number" name="cores"/>
-    <label>Frequency:</label>
-    <input type="number" name="frequency"/>
-    <label>Hyperthreading Enabled:</label>
-    <input type="text" name="hyperthreading" />
-    <input type="submit" value ="Add CPU to Build"/>
+    <label>Max Power Output:</label>
+    <input type="text" name="watts"/>
+    <label>80+ Efficiency Rating:</label>
+    <input type="text" name="efficiency"/>
+    <label>Modularity:</label>
+    <input type="text" name="modularity" />
+    <input type="submit" value ="Add Power Supply to Build"/>
 </form>

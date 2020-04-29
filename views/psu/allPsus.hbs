@@ -1,29 +1,29 @@
-<h1>Cpus List:</h1>
+<h1>All Power Supply Units:</h1>
 
-<a href="/cpu/new">
+<a href="/psu/new">
     <button>
-        Add New CPU
+        Add New Power Supply Unit
     </button>
 </a>
 
-{{#each allCpus}}
-    <a href="/cpu/{{_id}}">
-        <div class="cpu-item">
+{{#each allPsus}}
+    <a href="/psu/{{_id}}">
+        <div class="psu-item">
             <div class ="item">
                 <div class="title">Manufacturer:</div>
                 {{brand}}
             </div>
             <div class ="item">
-                <div class="title">Number of Cores:</div>
-                {{cores}}
+                <div class="title">Max Power Output:</div>
+                {{watts}}
             </div>
             <div class ="item">
-                <div class="title">Highest Core Frequency:</div>
-                {{frequency}}
+                <div class="title">80+ Efficiency Rating:</div>
+                {{efficiency}}
             </div>
             <div class ="item">
-                <div class="title">Hyperthreading Enabeled:</div>
-                {{hyperthreading}}
+                <div class="title">Modularity:</div>
+                {{modularity}}
             </div>
         </div>
     </a>

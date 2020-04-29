@@ -1,17 +1,17 @@
-<h1>Change CPU</h1>
+<h1>Change Power Supply</h1>
 
-<form action="/cpu/{{singleCpu._id}}?_method=PUT" method="POST">
+<form action="/psu/{{singlePsu._id}}?_method=PUT" method="POST">
     <label>Manufacturer:</label>
-    <input type="text" name="brand" value="{{singleCpu.cpu}}"/required>
+    <input type="text" name="brand" value="{{singlePsu.brand}}"/>
 
-    <label>Number of Cores:</label>
-    <input type="number" name="cores" value="{{singleCpu.cores}}"/>
+    <label>Max Power Output:</label>
+    <input type="text" name="watts" value="{{singlePsu.watts}}"/>
 
-    <label>Status:</label>
-    <input type="text" name="status" value="{{singleCpu.frequency}}"/>
+    <label>80+ Efficiency Rating:</label>
+    <input type="text" name="efficiency" value="{{singlePsu.efficiency}}"/>
 
-    <label>Hyperthreading Enabeled:</label>
-    <input type="string" name="hyperthreading"/>
+    <label>Modularity:</label>
+    <input type="text" name="modularity" value="{{singlePsu.modularity}}"/>
     
-    <input type="submit" value ="Change to New CPU"/>
+    <input type="submit" value ="Change to New Power Supply"/>
 </form>

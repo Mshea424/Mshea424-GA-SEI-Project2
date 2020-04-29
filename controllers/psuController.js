@@ -1,12 +1,12 @@
 const express = require('express')
-const cpuModel = require('../models/cpuModel.js')
-const cpuRouter = express.Router()
+const psuModel = require('../models/psuModel.js')
+const psuRouter = express.Router()
 
 // get All
-cpuRouter.get('/', (req, res) =>{
-    cpuModel.getAllCpus()
-    .then((allCpus) => {
-        res.render('cpu/allCpus.hbs', {allCpus})
+psuRouter.get('/', (req, res) =>{
+    psuModel.getAllPsus()
+    .then((allPsus) => {
+        res.render('psu/allPsus.hbs', {allPsus})
     })
     .catch(err => {
         console.log(err)
@@ -14,16 +14,16 @@ cpuRouter.get('/', (req, res) =>{
     })
 })
 
-//Go to Create new Cpu page
-cpuRouter.get('/new', (req, res) =>{
-    res.render('cpu/createCpu.hbs')
+//Go to Create new Psu page
+psuRouter.get('/new', (req, res) =>{
+    res.render('psu/createPsu.hbs')
 })
 
-//Go To Edit Cpu Page
-cpuRouter.get('/:id/edit', (req, res) => {
-    cpuModel.getOneCpu(req.params.id)
-    .then((singleCpu) => {
-        res.render('cpu/editCpu.hbs', {singleCpu})
+//Go To Edit Psu Page
+psuRouter.get('/:id/edit', (req, res) => {
+    psuModel.getOnePsu(req.params.id)
+    .then((singlePsu) => {
+        res.render('psu/editPsu.hbs', {singlePsu})
     })
     .catch(err => {
         console.log(err)
@@ -33,10 +33,10 @@ cpuRouter.get('/:id/edit', (req, res) => {
 
 
 // get ONE
-cpuRouter.get('/:id', (req, res) => {
-    cpuModel.getOneCpu(req.params.id)
-    .then((singleCpu) => {
-        res.render('cpu/singleCpu.hbs', {singleCpu})
+psuRouter.get('/:id', (req, res) => {
+    psuModel.getOnePsu(req.params.id)
+    .then((singlePsu) => {
+        res.render('psu/singlePsu.hbs', {singlePsu})
     })
     .catch(err => {
         console.log(err)
@@ -45,10 +45,10 @@ cpuRouter.get('/:id', (req, res) => {
 })
 
 // CREATE
-cpuRouter.post('/', (req, res) => {
-    cpuModel.createCpu(req.body)
+psuRouter.post('/', (req, res) => {
+    psuModel.createPsu(req.body)
         .then(() => {
-            res.redirect('/cpu')
+            res.redirect('/psu')
         })
         .catch(err => {
             console.log(err)
@@ -57,10 +57,10 @@ cpuRouter.post('/', (req, res) => {
 })
 
 //UPDATE
-cpuRouter.put('/:id', (req, res) => {
-    cpuModel.updateCpu(req.params.id, req.body)
+psuRouter.put('/:id', (req, res) => {
+    psuModel.updatePsu(req.params.id, req.body)
         .then(() => {
-            res.redirect(`/cpu/${req.params.id}`)
+            res.redirect(`/psu/${req.params.id}`)
         })
         .catch(err => {
             console.log(err)
@@ -70,10 +70,10 @@ cpuRouter.put('/:id', (req, res) => {
 
 
 //DELETE
-cpuRouter.delete('/:id', (req, res) => {
-    cpuModel.deleteCpu(req.params.id)
+psuRouter.delete('/:id', (req, res) => {
+    psuModel.deletePsu(req.params.id)
         .then(() => {
-            res.redirect('/cpu')
+            res.redirect('/psu')
         })
         .catch(err => {
             console.log(err)
@@ -81,4 +81,4 @@ cpuRouter.delete('/:id', (req, res) => {
         })
 })
 
-module.exports = cpuRouter
+module.exports = psuRouter
