@@ -1,35 +1,43 @@
-<h1>Change RAM Kit</h1>
+<h1>Change Fans + Radiators</h1>
 
-<form action="/ram/{{singleRam._id}}?_method=PUT" method="POST">
+<form action="/fan/{{singleFan._id}}?_method=PUT" method="POST">
+
     <label>Manufacturer:</label>
-    <select type="text" name="brand" value="{{singleRam.brand}}">
+    <select type="text" name="brand">
         <option>Corsail</option>
-        <option>HiperEggs</option>
-        <option>oG.Skillz</option>
-        <option>CrewChill</option>
+        <option>NotCua</option>
+        <option>Bsilent</option>
+        <option>ThurmLSteak</option>
     </select>
 
-    <label>Memory Capacity:</label>
-    <select type="text" name="memory" value="{{singleRam.memory}}">
-        <option>4 GigaBytes</option>
-        <option>8 GigaBytes</option>
-        <option>16 GigaBytes</option>
-        <option>32 GigaBytes</option>
+    <label>Fan Sizes:</label>
+    <select type="text" name="size">
+        <option>100mm</option>
+        <option>120mm</option>
+        <option>140mm</option>
+        <option>both 120mm + 140mm</option>
     </select>
 
-    <label>Generation:</label>
-    <select type="text" name="ddr" value="{{singleRam.ddr}}">
-        <option>DDR 3</option>
-        <option>DDR 4</option>
-    </select>
+    <label>quantity:</label>
+    <input type="number" min = 0 name="quantity"/>
 
-    <label>Frequency:</label>
-    <select type="text" name="frequency" value="{{singleRam.frequency}}">
-        <option>2000 mHz</option>
-        <option>2600 mHz</option>
-        <option>3200 mHz</option>
-        <option>3800 mHz</option>
+    <label>Radiators:</label>
+    <select type="text" name="wcRad">
+        <option>None</option>
+        <option>120mm AIO-integrated</option>
+        <option>140mm AIO-integrated</option>
+        <option>240mm AIO-integrated</option>
+        <option>280mm AIO-integrated</option>
+        <option>360mm AIO-integrated</option>
+        <option>120mm Open-Loop-integrated</option>
+        <option>140mm Open-Loop-integrated</option>
+        <option>240mm Open-Loop-integrated</option>
+        <option>280mm Open-Loop-integrated</option>
+        <option>360mm Open-Loop-integrated</option>
+        <option>480mm Open-Loop-integrated</option>
+        <option>560mm Open-Loop-integrated</option>
+        <option>720mm Open-Loop-integrated</option>
     </select>
     
-    <input type="submit" value ="Change to New RAM Kit"/>
+    <input type="submit" value ="Update Fans"/>
 </form>

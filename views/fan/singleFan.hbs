@@ -1,23 +1,23 @@
 
 
-        <a href="/ram/{{singleRam._id}}/edit">
+        <a href="/fan/{{singleFan._id}}/edit">
             <button>
-                Choose other RAM Kit
+                Change Fans + Radiators
             </button>
         </a>
         
         <div class="title">Manufacturer:</div>
-        {{singleRam.brand}}
+        {{singleFan.brand}}
 
-        <div class="title">Memory Capacity:</div>
-        {{singleRam.memory}}
+        <div class="title">Fan Sizes:</div>
+        {{singleFan.size}}
 
-        <div class="title">Generation:</div>
-        {{singleRam.ddr}}
+        <div class="title">Quantity:</div>
+        {{singleFan.quantity}}
 
-        <div class="title">Frequency:</div>
-        {{singleRam.frequency}}
+        <div class="title">Radiators:</div>
+        {{singleFan.wcRad}}
 
-        <form action="/ram/{{singleRam._id}}?_method=DELETE" method="POST">
+        <form action="/fan/{{singleFan._id}}?_method=DELETE" method="POST">
             <input type="submit" value="Remove from Build">
         </form>

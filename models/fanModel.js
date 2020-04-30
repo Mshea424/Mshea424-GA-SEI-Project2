@@ -1,45 +1,44 @@
 const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
 
-const ramSchema = new Schema({
+const fanSchema = new Schema({
     brand: String,
-    memory: String,
-    ddr: String,
-    frequency: String
-    
+    size: String,
+    quantity: Number,
+    wcRad: String
 })
 
-const ramList = mongoose.model('ram', ramSchema)
+const fanList = mongoose.model('fan', fanSchema)
 
 // get/read all
-function getAllRams() {
-    return ramList.find({})
+function getAllFans() {
+    return fanList.find({})
 }
 
 // get/read one
-function getOneRam(id) {
-    return ramList.findById(id)
+function getOneFan(id) {
+    return fanList.findById(id)
 }
 
 // post/create
-function createRam(newRam) {
-return ramList.create(newRam)
+function createFan(newFan) {
+return fanList.create(newFan)
 }
 
 // put/update
-function updateRam(id, newRam) {
-    return ramList.findByIdAndUpdate(id, newRam)
+function updateFan(id, newFan) {
+    return fanList.findByIdAndUpdate(id, newFan)
 }
 
 // delete
-function deleteRam(id) {
-    return ramList.findByIdAndDelete(id)
+function deleteFan(id) {
+    return fanList.findByIdAndDelete(id)
 }
 
 module.exports = {
-    getAllRams,
-    getOneRam,
-    createRam,
-    updateRam,
-    deleteRam
+    getAllFans,
+    getOneFan,
+    createFan,
+    updateFan,
+    deleteFan
 }

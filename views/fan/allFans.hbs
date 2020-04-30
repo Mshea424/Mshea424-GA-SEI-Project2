@@ -1,29 +1,29 @@
-<h1>All RAM Kits:</h1>
+<h1>All Case Fans + Radiators:</h1>
 
-<a href="/ram/new">
+<a href="/fan/new">
     <button>
-        Add New RAM Kit
+        Add New Case Fans
     </button>
 </a>
 
-{{#each allRams}}
-    <a href="/ram/{{_id}}">
-        <div class="ram-item">
+{{#each allFans}}
+    <a href="/fan/{{_id}}">
+        <div class="fan-item">
             <div class ="item">
                 <div class="title">Manufacturer:</div>
                 {{brand}}
             </div>
             <div class ="item">
-                <div class="title">Memory Capacity:</div>
-                {{memory}}
+                <div class="title">Fan Sizes:</div>
+                {{size}}
             </div>
             <div class ="item">
-                <div class="title">Generation:</div>
-                {{ddr}}
+                <div class="title">Quantity:</div>
+                {{quantity}}
             </div>
             <div class ="item">
-                <div class="title">Frequency:</div>
-                {{frequency}}
+                <div class="title">Radiators:</div>
+                {{wcRad}}
             </div>
         </div>
     </a>

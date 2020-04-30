@@ -1,12 +1,12 @@
 const express = require('express')
-const ramModel = require('../models/ramModel.js')
-const ramRouter = express.Router()
+const fanModel = require('../models/fanModel.js')
+const fanRouter = express.Router()
 
 // get All
-ramRouter.get('/', (req, res) =>{
-    ramModel.getAllRams()
-    .then((allRams) => {
-        res.render('ram/allRams.hbs', {allRams})
+fanRouter.get('/', (req, res) =>{
+    fanModel.getAllFans()
+    .then((allFans) => {
+        res.render('fan/allFans.hbs', {allFans})
     })
     .catch(err => {
         console.log(err)
@@ -14,16 +14,16 @@ ramRouter.get('/', (req, res) =>{
     })
 })
 
-//Go to Create new Ram page
-ramRouter.get('/new', (req, res) =>{
-    res.render('ram/createRam.hbs')
+//Go to Create new Fan page
+fanRouter.get('/new', (req, res) =>{
+    res.render('fan/createFan.hbs')
 })
 
-//Go To Edit Ram Page
-ramRouter.get('/:id/edit', (req, res) => {
-    ramModel.getOneRam(req.params.id)
-    .then((singleRam) => {
-        res.render('ram/editRam.hbs', {singleRam})
+//Go To Edit Fan Page
+fanRouter.get('/:id/edit', (req, res) => {
+    fanModel.getOneFan(req.params.id)
+    .then((singleFan) => {
+        res.render('fan/editFan.hbs', {singleFan})
     })
     .catch(err => {
         console.log(err)
@@ -33,10 +33,10 @@ ramRouter.get('/:id/edit', (req, res) => {
 
 
 // get ONE
-ramRouter.get('/:id', (req, res) => {
-    ramModel.getOneRam(req.params.id)
-    .then((singleRam) => {
-        res.render('ram/singleRam.hbs', {singleRam})
+fanRouter.get('/:id', (req, res) => {
+    fanModel.getOneFan(req.params.id)
+    .then((singleFan) => {
+        res.render('fan/singleFan.hbs', {singleFan})
     })
     .catch(err => {
         console.log(err)
@@ -45,10 +45,10 @@ ramRouter.get('/:id', (req, res) => {
 })
 
 // CREATE
-ramRouter.post('/', (req, res) => {
-    ramModel.createRam(req.body)
+fanRouter.post('/', (req, res) => {
+    fanModel.createFan(req.body)
         .then(() => {
-            res.redirect('/ram')
+            res.redirect('/fan')
         })
         .catch(err => {
             console.log(err)
@@ -57,10 +57,10 @@ ramRouter.post('/', (req, res) => {
 })
 
 //UPDATE
-ramRouter.put('/:id', (req, res) => {
-    ramModel.updateRam(req.params.id, req.body)
+fanRouter.put('/:id', (req, res) => {
+    fanModel.updateFan(req.params.id, req.body)
         .then(() => {
-            res.redirect(`/ram/${req.params.id}`)
+            res.redirect(`/fan/${req.params.id}`)
         })
         .catch(err => {
             console.log(err)
@@ -70,10 +70,10 @@ ramRouter.put('/:id', (req, res) => {
 
 
 //DELETE
-ramRouter.delete('/:id', (req, res) => {
-    ramModel.deleteRam(req.params.id)
+fanRouter.delete('/:id', (req, res) => {
+    fanModel.deleteFan(req.params.id)
         .then(() => {
-            res.redirect('/ram')
+            res.redirect('/fan')
         })
         .catch(err => {
             console.log(err)
@@ -81,4 +81,4 @@ ramRouter.delete('/:id', (req, res) => {
         })
 })
 
-module.exports = ramRouter
+module.exports = fanRouter
