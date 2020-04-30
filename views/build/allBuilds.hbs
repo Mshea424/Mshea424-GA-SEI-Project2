@@ -1,0 +1,30 @@
+<h1>All RAM Kits:</h1>
+
+<a href="/ram/new">
+    <button>
+        Add New RAM Kit
+    </button>
+</a>
+
+{{#each allRams}}
+    <a href="/ram/{{_id}}">
+        <div class="ram-item">
+            <div class ="item">
+                <div class="title">Manufacturer:</div>
+                {{brand}}
+            </div>
+            <div class ="item">
+                <div class="title">Memory Capacity:</div>
+                {{memory}}
+            </div>
+            <div class ="item">
+                <div class="title">Generation:</div>
+                {{ddr}}
+            </div>
+            <div class ="item">
+                <div class="title">Frequency:</div>
+                {{frequency}}
+            </div>
+        </div>
+    </a>
+{{/each}}

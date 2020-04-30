@@ -1,0 +1,23 @@
+
+
+        <a href="/ram/{{singleRam._id}}/edit">
+            <button>
+                Choose other RAM Kit
+            </button>
+        </a>
+        
+        <div class="title">Manufacturer:</div>
+        {{singleRam.brand}}
+
+        <div class="title">Memory Capacity:</div>
+        {{singleRam.memory}}
+
+        <div class="title">Generation:</div>
+        {{singleRam.ddr}}
+
+        <div class="title">Frequency:</div>
+        {{singleRam.frequency}}
+
+        <form action="/ram/{{singleRam._id}}?_method=DELETE" method="POST">
+            <input type="submit" value="Delete current RAM Kit">
+        </form>
