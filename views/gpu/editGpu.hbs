@@ -1,36 +1,54 @@
 
-<h1>Change RAM Kit</h1>
+<h1>Change GPU</h1>
 
-<form action="/ram/{{singleRam._id}}?_method=PUT" method="POST">
+<form action="/gpu/{{singleGpu._id}}?_method=PUT" method="POST">
     <label>Manufacturer:</label>
-    <select type="text" name="brand" value="{{singleRam.brand}}">
-        <option>Corsail</option>
-        <option>HiperEggs</option>
-        <option>oG.Skillz</option>
-        <option>CrewChill</option>
+    <select type="text" name="brand">
+        <option>FE (TeamGreen.llc)</option>
+        <option>Aces (TeamGreen.llc)</option>
+        <option>EBGH (TeamGreen.llc)</option>
+        <option>NSI (TeamGreen.llc)</option>
+        <option>Gigabit (TeamGreen.llc)</option>
+        <option>FE (TeamRed.llc)</option>
+        <option>Aces (TeamRed.llc)</option>
+        <option>EBGH (TeamRed.llc)</option>
+        <option>NSI (TeamRed.llc)</option>
+        <option>Gigabit (TeamRed.llc)</option>
     </select>
 
-    <label>Memory Capacity:</label>
-    <select type="text" name="memory" value="{{singleRam.memory}}">
-        <option>4 GigaBytes</option>
-        <option>8 GigaBytes</option>
-        <option>16 GigaBytes</option>
-        <option>32 GigaBytes</option>
-    </select>
-
-    <label>Generation:</label>
-    <select type="text" name="ddr" value="{{singleRam.ddr}}">
-        <option>DDR 3</option>
-        <option>DDR 4</option>
-    </select>
-
-    <label>Frequency:</label>
-    <select type="text" name="frequency" value="{{singleRam.frequency}}">
-        <option>2000 mHz</option>
-        <option>2600 mHz</option>
-        <option>3200 mHz</option>
-        <option>3800 mHz</option>
+    <label>Card Series:</label>
+    <select type="text" name="series">
+        <option>106 (TG)</option>
+        <option>107 (TG)</option>
+        <option>108 (TG)</option>
+        <option>108T (TG)</option>
+        <option>206 (TG)</option>
+        <option>207 (TG)</option>
+        <option>208 (TG)</option>
+        <option>208T (TG)</option>
+        <option>55D (TR)</option>
+        <option>56D (TR)</option>
+        <option>57D (TR)</option>
+        <option>58D (TR)</option>
+        <option>55DD (TR)</option>
+        <option>56DD (TR)</option>
+        <option>57DD XD (TR)</option>
     </select>
     
-    <input type="submit" value ="Change to New RAM Kit"/>
+    <label>VRAM Capacity:</label>
+    <select type="text" name="memory">
+        <option>4 GigaBytes</option>
+        <option>6 GigaBytes</option>
+        <option>8 GigaBytes</option>
+        <option>11 GigaBytes</option>
+    </select>
+
+    <label>VRAM Generation:</label>
+    <select type="text" name="ddr">
+        <option>GDDR 5</option>
+        <option>GDDR 5x</option>
+        <option>GDDR 6</option>
+    </select>
+    
+    <input type="submit" value ="Change to New GPU"/>
 </form>

@@ -1,12 +1,12 @@
 const express = require('express')
-const ramModel = require('../models/ramModel.js')
-const ramRouter = express.Router()
+const gpuModel = require('../models/gpuModel.js')
+const gpuRouter = express.Router()
 
 // get All
-ramRouter.get('/', (req, res) =>{
-    ramModel.getAllRams()
-    .then((allRams) => {
-        res.render('ram/allRams.hbs', {allRams})
+gpuRouter.get('/', (req, res) =>{
+    gpuModel.getAllGpus()
+    .then((allGpus) => {
+        res.render('gpu/allGpus.hbs', {allGpus})
     })
     .catch(err => {
         console.log(err)
@@ -14,16 +14,16 @@ ramRouter.get('/', (req, res) =>{
     })
 })
 
-//Go to Create new Ram page
-ramRouter.get('/new', (req, res) =>{
-    res.render('ram/createRam.hbs')
+//Go to Create new Gpu page
+gpuRouter.get('/new', (req, res) =>{
+    res.render('gpu/createGpu.hbs')
 })
 
-//Go To Edit Ram Page
-ramRouter.get('/:id/edit', (req, res) => {
-    ramModel.getOneRam(req.params.id)
-    .then((singleRam) => {
-        res.render('ram/editRam.hbs', {singleRam})
+//Go To Edit Gpu Page
+gpuRouter.get('/:id/edit', (req, res) => {
+    gpuModel.getOneGpu(req.params.id)
+    .then((singleGpu) => {
+        res.render('gpu/editGpu.hbs', {singleGpu})
     })
     .catch(err => {
         console.log(err)
@@ -33,10 +33,10 @@ ramRouter.get('/:id/edit', (req, res) => {
 
 
 // get ONE
-ramRouter.get('/:id', (req, res) => {
-    ramModel.getOneRam(req.params.id)
-    .then((singleRam) => {
-        res.render('ram/singleRam.hbs', {singleRam})
+gpuRouter.get('/:id', (req, res) => {
+    gpuModel.getOneGpu(req.params.id)
+    .then((singleGpu) => {
+        res.render('gpu/singleGpu.hbs', {singleGpu})
     })
     .catch(err => {
         console.log(err)
@@ -45,10 +45,10 @@ ramRouter.get('/:id', (req, res) => {
 })
 
 // CREATE
-ramRouter.post('/', (req, res) => {
-    ramModel.createRam(req.body)
+gpuRouter.post('/', (req, res) => {
+    gpuModel.createGpu(req.body)
         .then(() => {
-            res.redirect('/ram')
+            res.redirect('/gpu')
         })
         .catch(err => {
             console.log(err)
@@ -57,10 +57,10 @@ ramRouter.post('/', (req, res) => {
 })
 
 //UPDATE
-ramRouter.put('/:id', (req, res) => {
-    ramModel.updateRam(req.params.id, req.body)
+gpuRouter.put('/:id', (req, res) => {
+    gpuModel.updateGpu(req.params.id, req.body)
         .then(() => {
-            res.redirect(`/ram/${req.params.id}`)
+            res.redirect(`/gpu/${req.params.id}`)
         })
         .catch(err => {
             console.log(err)
@@ -70,10 +70,10 @@ ramRouter.put('/:id', (req, res) => {
 
 
 //DELETE
-ramRouter.delete('/:id', (req, res) => {
-    ramModel.deleteRam(req.params.id)
+gpuRouter.delete('/:id', (req, res) => {
+    gpuModel.deleteGpu(req.params.id)
         .then(() => {
-            res.redirect('/ram')
+            res.redirect('/gpu')
         })
         .catch(err => {
             console.log(err)
@@ -81,4 +81,4 @@ ramRouter.delete('/:id', (req, res) => {
         })
 })
 
-module.exports = ramRouter
+module.exports = gpuRouter

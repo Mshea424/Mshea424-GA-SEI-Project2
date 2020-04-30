@@ -1,45 +1,45 @@
 const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
 
-const ramSchema = new Schema({
+const gpuSchema = new Schema({
     brand: String,
+    series: String,
     memory: String,
-    ddr: String,
-    frequency: String
+    ddr: String
     
 })
 
-const ramList = mongoose.model('ram', ramSchema)
+const gpuList = mongoose.model('gpu', gpuSchema)
 
 // get/read all
-function getAllRams() {
-    return ramList.find({})
+function getAllGpus() {
+    return gpuList.find({})
 }
 
 // get/read one
-function getOneRam(id) {
-    return ramList.findById(id)
+function getOneGpu(id) {
+    return gpuList.findById(id)
 }
 
 // post/create
-function createRam(newRam) {
-return ramList.create(newRam)
+function createGpu(newGpu) {
+return gpuList.create(newGpu)
 }
 
 // put/update
-function updateRam(id, newRam) {
-    return ramList.findByIdAndUpdate(id, newRam)
+function updateGpu(id, newGpu) {
+    return gpuList.findByIdAndUpdate(id, newGpu)
 }
 
 // delete
-function deleteRam(id) {
-    return ramList.findByIdAndDelete(id)
+function deleteGpu(id) {
+    return gpuList.findByIdAndDelete(id)
 }
 
 module.exports = {
-    getAllRams,
-    getOneRam,
-    createRam,
-    updateRam,
-    deleteRam
+    getAllGpus,
+    getOneGpu,
+    createGpu,
+    updateGpu,
+    deleteGpu
 }

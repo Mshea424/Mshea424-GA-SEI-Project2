@@ -1,29 +1,29 @@
-<h1>All RAM Kits:</h1>
+<h1>All GPUs:</h1>
 
-<a href="/ram/new">
+<a href="/gpu/new">
     <button>
-        Add New RAM Kit
+        Add New GPU
     </button>
 </a>
 
-{{#each allRams}}
-    <a href="/ram/{{_id}}">
-        <div class="ram-item">
+{{#each allGpus}}
+    <a href="/gpu/{{_id}}">
+        <div class="gpu-item">
             <div class ="item">
                 <div class="title">Manufacturer:</div>
                 {{brand}}
             </div>
             <div class ="item">
-                <div class="title">Memory Capacity:</div>
+                <div class="title">Card Series:</div>
+                {{series}}
+            </div>
+            <div class ="item">
+                <div class="title">VRAM Capacity:</div>
                 {{memory}}
             </div>
             <div class ="item">
-                <div class="title">Generation:</div>
+                <div class="title">VRAM Generation:</div>
                 {{ddr}}
-            </div>
-            <div class ="item">
-                <div class="title">Frequency:</div>
-                {{frequency}}
             </div>
         </div>
     </a>
