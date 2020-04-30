@@ -1,45 +1,45 @@
 const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
 
-const ramSchema = new Schema({
+const caseSchema = new Schema({
     brand: String,
-    memory: String,
-    ddr: String,
-    frequency: String
+    size: String,
+    viewPort: String,
+    waterCool: String
     
 })
 
-const ramList = mongoose.model('ram', ramSchema)
+const caseList = mongoose.model('case', caseSchema)
 
 // get/read all
-function getAllRams() {
-    return ramList.find({})
+function getAllCases() {
+    return caseList.find({})
 }
 
 // get/read one
-function getOneRam(id) {
-    return ramList.findById(id)
+function getOneCase(id) {
+    return caseList.findById(id)
 }
 
 // post/create
-function createRam(newRam) {
-return ramList.create(newRam)
+function createCase(newCase) {
+return caseList.create(newCase)
 }
 
 // put/update
-function updateRam(id, newRam) {
-    return ramList.findByIdAndUpdate(id, newRam)
+function updateCase(id, newCase) {
+    return caseList.findByIdAndUpdate(id, newCase)
 }
 
 // delete
-function deleteRam(id) {
-    return ramList.findByIdAndDelete(id)
+function deleteCase(id) {
+    return caseList.findByIdAndDelete(id)
 }
 
 module.exports = {
-    getAllRams,
-    getOneRam,
-    createRam,
-    updateRam,
-    deleteRam
+    getAllCases,
+    getOneCase,
+    createCase,
+    updateCase,
+    deleteCase
 }

@@ -1,29 +1,29 @@
-<h1>All RAM Kits:</h1>
+<h1>All PC Desktop Cases:</h1>
 
-<a href="/ram/new">
+<a href="/case/new">
     <button>
-        Add New RAM Kit
+        Add New Case
     </button>
 </a>
 
-{{#each allRams}}
-    <a href="/ram/{{_id}}">
-        <div class="ram-item">
+{{#each allCases}}
+    <a href="/case/{{_id}}">
+        <div class="case-item">
             <div class ="item">
                 <div class="title">Manufacturer:</div>
                 {{brand}}
             </div>
             <div class ="item">
-                <div class="title">Memory Capacity:</div>
-                {{memory}}
+                <div class="title">Case Size:</div>
+                {{size}}
             </div>
             <div class ="item">
-                <div class="title">Generation:</div>
-                {{ddr}}
+                <div class="title">Viewport Type:</div>
+                {{viewPort}}
             </div>
             <div class ="item">
-                <div class="title">Frequency:</div>
-                {{frequency}}
+                <div class="title">Watercooling Friendly:</div>
+                {{waterCool}}
             </div>
         </div>
     </a>

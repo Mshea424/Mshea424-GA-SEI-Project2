@@ -1,23 +1,23 @@
 
 
-        <a href="/ram/{{singleRam._id}}/edit">
+        <a href="/case/{{singleCase._id}}/edit">
             <button>
-                Choose other RAM Kit
+                Change to other PC Desktop Case
             </button>
         </a>
         
         <div class="title">Manufacturer:</div>
-        {{singleRam.brand}}
+        {{singleCase.brand}}
 
-        <div class="title">Memory Capacity:</div>
-        {{singleRam.memory}}
+        <div class="title">Size:</div>
+        {{singleCase.size}}
 
-        <div class="title">Generation:</div>
-        {{singleRam.ddr}}
+        <div class="title">Viewport Type:</div>
+        {{singleCase.viewPort}}
 
-        <div class="title">Frequency:</div>
-        {{singleRam.frequency}}
+        <div class="title">Watercooling Friendly:</div>
+        {{singleCase.waterCool}}
 
-        <form action="/ram/{{singleRam._id}}?_method=DELETE" method="POST">
-            <input type="submit" value="Delete current RAM Kit">
+        <form action="/case/{{singleCase._id}}?_method=DELETE" method="POST">
+            <input type="submit" value="Remove from Build">
         </form>

@@ -1,12 +1,12 @@
 const express = require('express')
-const ramModel = require('../models/ramModel.js')
-const ramRouter = express.Router()
+const caseModel = require('../models/caseModel.js')
+const caseRouter = express.Router()
 
 // get All
-ramRouter.get('/', (req, res) =>{
-    ramModel.getAllRams()
-    .then((allRams) => {
-        res.render('ram/allRams.hbs', {allRams})
+caseRouter.get('/', (req, res) =>{
+    caseModel.getAllCases()
+    .then((allCases) => {
+        res.render('case/allCases.hbs', {allCases})
     })
     .catch(err => {
         console.log(err)
@@ -14,16 +14,16 @@ ramRouter.get('/', (req, res) =>{
     })
 })
 
-//Go to Create new Ram page
-ramRouter.get('/new', (req, res) =>{
-    res.render('ram/createRam.hbs')
+//Go to Create new Case page
+caseRouter.get('/new', (req, res) =>{
+    res.render('case/createCase.hbs')
 })
 
-//Go To Edit Ram Page
-ramRouter.get('/:id/edit', (req, res) => {
-    ramModel.getOneRam(req.params.id)
-    .then((singleRam) => {
-        res.render('ram/editRam.hbs', {singleRam})
+//Go To Edit Case Page
+caseRouter.get('/:id/edit', (req, res) => {
+    caseModel.getOneCase(req.params.id)
+    .then((singleCase) => {
+        res.render('case/editCase.hbs', {singleCase})
     })
     .catch(err => {
         console.log(err)
@@ -33,10 +33,10 @@ ramRouter.get('/:id/edit', (req, res) => {
 
 
 // get ONE
-ramRouter.get('/:id', (req, res) => {
-    ramModel.getOneRam(req.params.id)
-    .then((singleRam) => {
-        res.render('ram/singleRam.hbs', {singleRam})
+caseRouter.get('/:id', (req, res) => {
+    caseModel.getOneCase(req.params.id)
+    .then((singleCase) => {
+        res.render('case/singleCase.hbs', {singleCase})
     })
     .catch(err => {
         console.log(err)
@@ -45,10 +45,10 @@ ramRouter.get('/:id', (req, res) => {
 })
 
 // CREATE
-ramRouter.post('/', (req, res) => {
-    ramModel.createRam(req.body)
+caseRouter.post('/', (req, res) => {
+    caseModel.createCase(req.body)
         .then(() => {
-            res.redirect('/ram')
+            res.redirect('/case')
         })
         .catch(err => {
             console.log(err)
@@ -57,10 +57,10 @@ ramRouter.post('/', (req, res) => {
 })
 
 //UPDATE
-ramRouter.put('/:id', (req, res) => {
-    ramModel.updateRam(req.params.id, req.body)
+caseRouter.put('/:id', (req, res) => {
+    caseModel.updateCase(req.params.id, req.body)
         .then(() => {
-            res.redirect(`/ram/${req.params.id}`)
+            res.redirect(`/case/${req.params.id}`)
         })
         .catch(err => {
             console.log(err)
@@ -70,10 +70,10 @@ ramRouter.put('/:id', (req, res) => {
 
 
 //DELETE
-ramRouter.delete('/:id', (req, res) => {
-    ramModel.deleteRam(req.params.id)
+caseRouter.delete('/:id', (req, res) => {
+    caseModel.deleteCase(req.params.id)
         .then(() => {
-            res.redirect('/ram')
+            res.redirect('/case')
         })
         .catch(err => {
             console.log(err)
@@ -81,4 +81,4 @@ ramRouter.delete('/:id', (req, res) => {
         })
 })
 
-module.exports = ramRouter
+module.exports = caseRouter
