@@ -1,12 +1,12 @@
 const express = require('express')
-const ramModel = require('../models/ramModel.js')
-const ramRouter = express.Router()
+const gpucoolerModel = require('../models/gpucoolerModel.js')
+const gpucoolerRouter = express.Router()
 
 // get All
-ramRouter.get('/', (req, res) =>{
-    ramModel.getAllRams()
-    .then((allRams) => {
-        res.render('ram/allRams.hbs', {allRams})
+gpucoolerRouter.get('/', (req, res) =>{
+    gpucoolerModel.getAllGpuCoolers()
+    .then((allGpuCoolers) => {
+        res.render('gpucooler/allGpuCoolers.hbs', {allGpuCoolers})
     })
     .catch(err => {
         console.log(err)
@@ -14,16 +14,16 @@ ramRouter.get('/', (req, res) =>{
     })
 })
 
-//Go to Create new Ram page
-ramRouter.get('/new', (req, res) =>{
-    res.render('ram/createRam.hbs')
+//Go to Create new GpuCooler page
+gpucoolerRouter.get('/new', (req, res) =>{
+    res.render('gpucooler/createGpuCooler.hbs')
 })
 
-//Go To Edit Ram Page
-ramRouter.get('/:id/edit', (req, res) => {
-    ramModel.getOneRam(req.params.id)
-    .then((singleRam) => {
-        res.render('ram/editRam.hbs', {singleRam})
+//Go To Edit GpuCooler Page
+gpucoolerRouter.get('/:id/edit', (req, res) => {
+    gpucoolerModel.getOneGpuCooler(req.params.id)
+    .then((singleGpuCooler) => {
+        res.render('gpucooler/editGpuCooler.hbs', {singleGpuCooler})
     })
     .catch(err => {
         console.log(err)
@@ -33,10 +33,10 @@ ramRouter.get('/:id/edit', (req, res) => {
 
 
 // get ONE
-ramRouter.get('/:id', (req, res) => {
-    ramModel.getOneRam(req.params.id)
-    .then((singleRam) => {
-        res.render('ram/singleRam.hbs', {singleRam})
+gpucoolerRouter.get('/:id', (req, res) => {
+    gpucoolerModel.getOneGpuCooler(req.params.id)
+    .then((singleGpuCooler) => {
+        res.render('gpucooler/singleGpuCooler.hbs', {singleGpuCooler})
     })
     .catch(err => {
         console.log(err)
@@ -45,10 +45,10 @@ ramRouter.get('/:id', (req, res) => {
 })
 
 // CREATE
-ramRouter.post('/', (req, res) => {
-    ramModel.createRam(req.body)
+gpucoolerRouter.post('/', (req, res) => {
+    gpucoolerModel.createGpuCooler(req.body)
         .then(() => {
-            res.redirect('/ram')
+            res.redirect('/gpucooler')
         })
         .catch(err => {
             console.log(err)
@@ -57,10 +57,10 @@ ramRouter.post('/', (req, res) => {
 })
 
 //UPDATE
-ramRouter.put('/:id', (req, res) => {
-    ramModel.updateRam(req.params.id, req.body)
+gpucoolerRouter.put('/:id', (req, res) => {
+    gpucoolerModel.updateGpuCooler(req.params.id, req.body)
         .then(() => {
-            res.redirect(`/ram/${req.params.id}`)
+            res.redirect(`/gpucooler/${req.params.id}`)
         })
         .catch(err => {
             console.log(err)
@@ -70,10 +70,10 @@ ramRouter.put('/:id', (req, res) => {
 
 
 //DELETE
-ramRouter.delete('/:id', (req, res) => {
-    ramModel.deleteRam(req.params.id)
+gpucoolerRouter.delete('/:id', (req, res) => {
+    gpucoolerModel.deleteGpuCooler(req.params.id)
         .then(() => {
-            res.redirect('/ram')
+            res.redirect('/gpucooler')
         })
         .catch(err => {
             console.log(err)
@@ -81,4 +81,4 @@ ramRouter.delete('/:id', (req, res) => {
         })
 })
 
-module.exports = ramRouter
+module.exports = gpucoolerRouter
