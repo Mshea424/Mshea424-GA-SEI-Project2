@@ -1,12 +1,12 @@
 const express = require('express')
-const ramModel = require('../models/ramModel.js')
-const ramRouter = express.Router()
+const cpucoolerModel = require('../models/cpucoolerModel.js')
+const cpucoolerRouter = express.Router()
 
 // get All
-ramRouter.get('/', (req, res) =>{
-    ramModel.getAllRams()
-    .then((allRams) => {
-        res.render('ram/allRams.hbs', {allRams})
+cpucoolerRouter.get('/', (req, res) =>{
+    cpucoolerModel.getAllCpuCoolers()
+    .then((allCpuCoolers) => {
+        res.render('cpucooler/allCpuCoolers.hbs', {allCpuCoolers})
     })
     .catch(err => {
         console.log(err)
@@ -14,16 +14,16 @@ ramRouter.get('/', (req, res) =>{
     })
 })
 
-//Go to Create new Ram page
-ramRouter.get('/new', (req, res) =>{
-    res.render('ram/createRam.hbs')
+//Go to Create new CpuCooler page
+cpucoolerRouter.get('/new', (req, res) =>{
+    res.render('cpucooler/createCpuCooler.hbs')
 })
 
-//Go To Edit Ram Page
-ramRouter.get('/:id/edit', (req, res) => {
-    ramModel.getOneRam(req.params.id)
-    .then((singleRam) => {
-        res.render('ram/editRam.hbs', {singleRam})
+//Go To Edit CpuCooler Page
+cpucoolerRouter.get('/:id/edit', (req, res) => {
+    cpucoolerModel.getOneCpuCooler(req.params.id)
+    .then((singleCpuCooler) => {
+        res.render('cpucooler/editCpuCooler.hbs', {singleCpuCooler})
     })
     .catch(err => {
         console.log(err)
@@ -33,10 +33,10 @@ ramRouter.get('/:id/edit', (req, res) => {
 
 
 // get ONE
-ramRouter.get('/:id', (req, res) => {
-    ramModel.getOneRam(req.params.id)
-    .then((singleRam) => {
-        res.render('ram/singleRam.hbs', {singleRam})
+cpucoolerRouter.get('/:id', (req, res) => {
+    cpucoolerModel.getOneCpuCooler(req.params.id)
+    .then((singleCpuCooler) => {
+        res.render('cpucooler/singleCpuCooler.hbs', {singleCpuCooler})
     })
     .catch(err => {
         console.log(err)
@@ -45,10 +45,10 @@ ramRouter.get('/:id', (req, res) => {
 })
 
 // CREATE
-ramRouter.post('/', (req, res) => {
-    ramModel.createRam(req.body)
+cpucoolerRouter.post('/', (req, res) => {
+    cpucoolerModel.createCpuCooler(req.body)
         .then(() => {
-            res.redirect('/ram')
+            res.redirect('/cpucooler')
         })
         .catch(err => {
             console.log(err)
@@ -57,10 +57,10 @@ ramRouter.post('/', (req, res) => {
 })
 
 //UPDATE
-ramRouter.put('/:id', (req, res) => {
-    ramModel.updateRam(req.params.id, req.body)
+cpucoolerRouter.put('/:id', (req, res) => {
+    cpucoolerModel.updateCpuCooler(req.params.id, req.body)
         .then(() => {
-            res.redirect(`/ram/${req.params.id}`)
+            res.redirect(`/cpucooler/${req.params.id}`)
         })
         .catch(err => {
             console.log(err)
@@ -70,10 +70,10 @@ ramRouter.put('/:id', (req, res) => {
 
 
 //DELETE
-ramRouter.delete('/:id', (req, res) => {
-    ramModel.deleteRam(req.params.id)
+cpucoolerRouter.delete('/:id', (req, res) => {
+    cpucoolerModel.deleteCpuCooler(req.params.id)
         .then(() => {
-            res.redirect('/ram')
+            res.redirect('/cpucooler')
         })
         .catch(err => {
             console.log(err)
@@ -81,4 +81,4 @@ ramRouter.delete('/:id', (req, res) => {
         })
 })
 
-module.exports = ramRouter
+module.exports = cpucoolerRouter

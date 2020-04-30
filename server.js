@@ -6,6 +6,7 @@ const psuRouter = require('./controllers/psuController.js')
 const ramRouter = require('./controllers/ramController.js')
 const buildRouter = require('./controllers/buildController.js')
 const caseRouter = require('./controllers/caseController.js')
+const cpuCoolerRouter = require('./controllers/cpuCoolerController.js')
 
 const methodOverride = require('method-override')
 
@@ -29,6 +30,7 @@ server.use('/psu', psuRouter)
 server.use('/ram', ramRouter)
 server.use('/build', buildRouter)
 server.use('/case', caseRouter)
+server.use('/cpuCooler', cpuCoolerRouter)
 
 server.listen(port, () => {
     console.log(`server started on ${port}`)

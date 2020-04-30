@@ -1,23 +1,17 @@
 
 
-        <a href="/ram/{{singleRam._id}}/edit">
+        <a href="/cpucooler/{{singleCpuCooler._id}}/edit">
             <button>
-                Choose other RAM Kit
+                Choose other CPU Cooler
             </button>
         </a>
         
         <div class="title">Manufacturer:</div>
-        {{singleRam.brand}}
+        {{singleCpuCooler.brand}}
 
-        <div class="title">Memory Capacity:</div>
-        {{singleRam.memory}}
+        <div class="title">Cooler Design:</div>
+        {{singleCpuCooler.type}}
 
-        <div class="title">Generation:</div>
-        {{singleRam.ddr}}
-
-        <div class="title">Frequency:</div>
-        {{singleRam.frequency}}
-
-        <form action="/ram/{{singleRam._id}}?_method=DELETE" method="POST">
+        <form action="/cpucooler/{{singleCpuCooler._id}}?_method=DELETE" method="POST">
             <input type="submit" value="Remove from Build">
         </form>

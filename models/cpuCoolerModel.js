@@ -1,45 +1,42 @@
 const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
 
-const ramSchema = new Schema({
+const cpucoolerSchema = new Schema({
     brand: String,
-    memory: String,
-    ddr: String,
-    frequency: String
-    
+    type: String,    
 })
 
-const ramList = mongoose.model('ram', ramSchema)
+const cpucoolerList = mongoose.model('cpucooler', cpucoolerSchema)
 
 // get/read all
-function getAllRams() {
-    return ramList.find({})
+function getAllCpuCoolers() {
+    return cpucoolerList.find({})
 }
 
 // get/read one
-function getOneRam(id) {
-    return ramList.findById(id)
+function getOneCpuCooler(id) {
+    return cpucoolerList.findById(id)
 }
 
 // post/create
-function createRam(newRam) {
-return ramList.create(newRam)
+function createCpuCooler(newCpuCooler) {
+return cpucoolerList.create(newCpuCooler)
 }
 
 // put/update
-function updateRam(id, newRam) {
-    return ramList.findByIdAndUpdate(id, newRam)
+function updateCpuCooler(id, newCpuCooler) {
+    return cpucoolerList.findByIdAndUpdate(id, newCpuCooler)
 }
 
 // delete
-function deleteRam(id) {
-    return ramList.findByIdAndDelete(id)
+function deleteCpuCooler(id) {
+    return cpucoolerList.findByIdAndDelete(id)
 }
 
 module.exports = {
-    getAllRams,
-    getOneRam,
-    createRam,
-    updateRam,
-    deleteRam
+    getAllCpuCoolers,
+    getOneCpuCooler,
+    createCpuCooler,
+    updateCpuCooler,
+    deleteCpuCooler
 }

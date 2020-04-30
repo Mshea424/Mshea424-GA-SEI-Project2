@@ -1,29 +1,21 @@
-<h1>All RAM Kits:</h1>
+<h1>All CPU Coolers:</h1>
 
-<a href="/ram/new">
+<a href="/cpucooler/new">
     <button>
-        Add New RAM Kit
+        Add New CPU Cooler
     </button>
 </a>
 
-{{#each allRams}}
-    <a href="/ram/{{_id}}">
-        <div class="ram-item">
+{{#each allCpuCoolers}}
+    <a href="/cpucooler/{{_id}}">
+        <div class="cpucooler-item">
             <div class ="item">
                 <div class="title">Manufacturer:</div>
                 {{brand}}
             </div>
             <div class ="item">
-                <div class="title">Memory Capacity:</div>
-                {{memory}}
-            </div>
-            <div class ="item">
-                <div class="title">Generation:</div>
-                {{ddr}}
-            </div>
-            <div class ="item">
-                <div class="title">Frequency:</div>
-                {{frequency}}
+                <div class="title">Cooler Design:</div>
+                {{type}}
             </div>
         </div>
     </a>

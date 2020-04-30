@@ -1,35 +1,22 @@
-<h1>Change RAM Kit</h1>
+<h1>Change CPU Cooler</h1>
 
-<form action="/ram/{{singleRam._id}}?_method=PUT" method="POST">
+<form action="/cpucooler/{{singleCpuCooler._id}}?_method=PUT" method="POST">
     <label>Manufacturer:</label>
-    <select type="text" name="brand" value="{{singleRam.brand}}">
+        <select type="text" name="brand">
         <option>Corsail</option>
-        <option>HiperEggs</option>
-        <option>oG.Skillz</option>
-        <option>CrewChill</option>
+        <option>TeamRed.llc</option>
+        <option>Bsilent</option>
+        <option>BKwb</option>
     </select>
 
-    <label>Memory Capacity:</label>
-    <select type="text" name="memory" value="{{singleRam.memory}}">
-        <option>4 GigaBytes</option>
-        <option>8 GigaBytes</option>
-        <option>16 GigaBytes</option>
-        <option>32 GigaBytes</option>
+    <label>Cooler Design:</label>
+    <select type="text" name="type">
+        <option>CPU stock (air)</option>
+        <option>Air (aftermarket)</option>
+        <option>Closed-loop Water (AIO)</option>
+        <option>Open-loop Water (block)</option>
     </select>
 
-    <label>Generation:</label>
-    <select type="text" name="ddr" value="{{singleRam.ddr}}">
-        <option>DDR 3</option>
-        <option>DDR 4</option>
-    </select>
-
-    <label>Frequency:</label>
-    <select type="text" name="frequency" value="{{singleRam.frequency}}">
-        <option>2000 mHz</option>
-        <option>2600 mHz</option>
-        <option>3200 mHz</option>
-        <option>3800 mHz</option>
-    </select>
     
-    <input type="submit" value ="Change to New RAM Kit"/>
+    <input type="submit" value ="Change to New CPU Cooler"/>
 </form>
