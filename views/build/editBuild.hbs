@@ -1,35 +1,11 @@
-<h1>Change RAM Kit</h1>
+<h1>Update Build</h1>
 
-<form action="/ram/{{singleRam._id}}?_method=PUT" method="POST">
-    <label>Manufacturer:</label>
-    <select type="text" name="brand" value="{{singleRam.brand}}">
-        <option>Corsail</option>
-        <option>HiperEggs</option>
-        <option>oG.Skillz</option>
-        <option>CrewChill</option>
-    </select>
+<form action="/build/{{singleBuild._id}}?_method=PUT" method="POST">
+    <label>Name of Build:</label>
+    <input type="text" name="name"/>
 
-    <label>Memory Capacity:</label>
-    <select type="text" name="memory" value="{{singleRam.memory}}">
-        <option>4 GigaBytes</option>
-        <option>8 GigaBytes</option>
-        <option>16 GigaBytes</option>
-        <option>32 GigaBytes</option>
-    </select>
+    <label>Date Updated:</label>
+    <input type="date" name="date"/>
 
-    <label>Generation:</label>
-    <select type="text" name="ddr" value="{{singleRam.ddr}}">
-        <option>DDR 3</option>
-        <option>DDR 4</option>
-    </select>
-
-    <label>Frequency:</label>
-    <select type="text" name="frequency" value="{{singleRam.frequency}}">
-        <option>2000 mHz</option>
-        <option>2600 mHz</option>
-        <option>3200 mHz</option>
-        <option>3800 mHz</option>
-    </select>
-    
-    <input type="submit" value ="Change to New RAM Kit"/>
+    <input type="submit" value ="Update Your Build"/>
 </form>

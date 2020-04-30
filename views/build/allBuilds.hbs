@@ -1,29 +1,21 @@
-<h1>All RAM Kits:</h1>
+<h1>All PC Desktop Builds:</h1>
 
-<a href="/ram/new">
+<a href="/build/new">
     <button>
-        Add New RAM Kit
+        Configure Your Own Build
     </button>
 </a>
 
-{{#each allRams}}
-    <a href="/ram/{{_id}}">
-        <div class="ram-item">
+{{#each allBuilds}}
+    <a href="/build/{{_id}}">
+        <div class="build-item">
             <div class ="item">
-                <div class="title">Manufacturer:</div>
-                {{brand}}
+                {{name}}
             </div>
             <div class ="item">
-                <div class="title">Memory Capacity:</div>
-                {{memory}}
+                <div class="title">Date Created:</div>
+                {{date}}
             </div>
-            <div class ="item">
-                <div class="title">Generation:</div>
-                {{ddr}}
-            </div>
-            <div class ="item">
-                <div class="title">Frequency:</div>
-                {{frequency}}
             </div>
         </div>
     </a>
