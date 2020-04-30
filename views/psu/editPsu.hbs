@@ -2,16 +2,39 @@
 
 <form action="/psu/{{singlePsu._id}}?_method=PUT" method="POST">
     <label>Manufacturer:</label>
-    <input type="text" name="brand" value="{{singlePsu.brand}}"/>
+    <select type="text" name="brand" value="{{singlePsu.brand}}">
+        <option>EBGH</option>
+        <option>Corsail</option>
+        <option>SeaSoning</option>
+    </select>
 
     <label>Max Power Output:</label>
-    <input type="text" name="watts" value="{{singlePsu.watts}}"/>
+    <select type="text" name="watts" value="{{singlePsu.watts}}">
+        <option>400 watts</option>
+        <option>500 watts</option>
+        <option>750 watts</option>
+        <option>850 watts</option>
+        <option>1000 watts</option>
+        <option>1200 watts</option>
+    </select>
+
 
     <label>80+ Efficiency Rating:</label>
-    <input type="text" name="efficiency" value="{{singlePsu.efficiency}}"/>
+    <select type="text" name="efficiency" value="{{singlePsu.efficiency}}">
+        <option>None</option>
+        <option>Bronze</option>
+        <option>Silver</option>
+        <option>Gold</option>
+        <option>Platinum</option>
+        <option>Titanium</option>
+    </select>
 
     <label>Modularity:</label>
-    <input type="text" name="modularity" value="{{singlePsu.modularity}}"/>
+    <select type="text" name="modularity" value="{{singlePsu.modularity}}">
+        <option>None</option>
+        <option>Semi-Modular</option>
+        <option>Modular</option>
+    </select>
     
     <input type="submit" value ="Change to New Power Supply"/>
 </form>

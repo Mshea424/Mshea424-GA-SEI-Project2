@@ -2,12 +2,39 @@
 
 <form action="/psu" method="POST">
     <label>Manufacturer:</label>
-    <input type="text" name="brand"/>
+    <select type="text" name="brand">
+        <option>EBGH</option>
+        <option>Corsail</option>
+        <option>SeaSoning</option>
+    </select>
+
     <label>Max Power Output:</label>
-    <input type="text" name="watts"/>
+    <select type="text" name="watts">
+        <option>400 watts</option>
+        <option>500 watts</option>
+        <option>750 watts</option>
+        <option>850 watts</option>
+        <option>1000 watts</option>
+        <option>1200 watts</option>
+    </select>
+
     <label>80+ Efficiency Rating:</label>
-    <input type="text" name="efficiency"/>
-    <label>Modularity:</label>
-    <input type="text" name="modularity" />
+    <select type="text" name="efficiency">
+        <option>None</option>
+        <option>Bronze</option>
+        <option>Silver</option>
+        <option>Gold</option>
+        <option>Platinum</option>
+        <option>Titanium</option>
+    </select>
+
+
+    <label>Cable Modularity:</label>
+    <select type="text" name="modularity" >
+        <option>None</option>
+        <option>Semi-Modular</option>
+        <option>Modular</option>
+    </select>
+
     <input type="submit" value ="Add Power Supply to Build"/>
 </form>
