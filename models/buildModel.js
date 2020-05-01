@@ -3,7 +3,6 @@ const Schema = mongoose.Schema
 
 const buildSchema = new Schema({
     name: String,
-    date: String,
 })
 
 const buildList = mongoose.model('build', buildSchema)

@@ -1,11 +1,9 @@
 <h1>Update Build</h1>
 
 <form action="/build/{{singleBuild._id}}?_method=PUT" method="POST">
-    <label>Name of Build:</label>
-    <input type="text" name="name"/>
 
-    <label>Date Updated:</label>
-    <input type="date" name="date"/>
+    <label>Name of Build:</label>
+    <input type="text" name="name" value="{{singleBuild.name}}" required/>
 
     <input type="submit" value ="Update Your Build"/>
 </form>

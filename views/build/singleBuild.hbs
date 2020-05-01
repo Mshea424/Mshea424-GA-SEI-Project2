@@ -8,12 +8,6 @@
 
         {{singleBuild.name}}
 
-        <div class="title">Memory Capacity:</div>
-        {{singleBuild.memory}}
-
-        <div class="title">Date Last Configured:</div>
-        {{singleBuild.date}}
-
         <form action="/build/{{singleBuild._id}}?_method=DELETE" method="POST">
             <input type="submit" value="Delete this Build">
         </form>
