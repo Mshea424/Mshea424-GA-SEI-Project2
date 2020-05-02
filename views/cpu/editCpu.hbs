@@ -1,6 +1,10 @@
 <h1>Change CPU</h1>
 
 <form action="/cpu/{{singleCpu._id}}?_method=PUT" method="POST">
+
+    <label>Rename Your CPU</label>
+    <input type ="text" name="name" value="{{singleCpu.name}}"/>
+
     <label>Manufacturer:</label>
     <select type="text" name="brand" value="{{singleCpu.brand}}">
         <option>TeamRed.llc</option>

@@ -1,6 +1,10 @@
 <h1>Change CPU Cooler</h1>
 
 <form action="/cpucooler/{{singleCpuCooler._id}}?_method=PUT" method="POST">
+
+    <label>Rename Your CPU Cooler</label>
+    <input type ="text" name="name" value="{{singleCpuCooler.name}}"/>
+
     <label>Manufacturer:</label>
         <select type="text" name="brand">
         <option>Corsail</option>

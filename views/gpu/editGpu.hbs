@@ -2,6 +2,10 @@
 <h1>Change GPU</h1>
 
 <form action="/gpu/{{singleGpu._id}}?_method=PUT" method="POST">
+
+    <label>Rename Your GPU</label>
+    <input type ="text" name="name" value="{{singleGpu.name}}"/>
+
     <label>Manufacturer:</label>
     <select type="text" name="brand">
         <option>FE (TeamGreen.llc)</option>

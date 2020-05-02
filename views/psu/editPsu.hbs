@@ -1,6 +1,10 @@
 <h1>Change Power Supply</h1>
 
 <form action="/psu/{{singlePsu._id}}?_method=PUT" method="POST">
+
+    <label>Rename Your PSU</label>
+    <input type ="text" name="name" value="{{singlePsu.name}}"/>
+
     <label>Manufacturer:</label>
     <select type="text" name="brand" value="{{singlePsu.brand}}">
         <option>EBGH</option>

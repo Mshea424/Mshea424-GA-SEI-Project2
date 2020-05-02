@@ -1,5 +1,5 @@
 const express = require('express')
-const gpucoolerModel = require('../models/gpucoolerModel.js')
+const gpucoolerModel = require('../models/gpuCoolerModel.js')
 const gpucoolerRouter = express.Router()
 
 // get All

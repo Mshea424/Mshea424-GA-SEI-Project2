@@ -2,6 +2,7 @@ const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
 
 const psuSchema = new Schema({
+    name: String,
     brand: String,
     watts: String,
     efficiency: String,

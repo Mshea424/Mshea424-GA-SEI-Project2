@@ -2,6 +2,9 @@
 
 <form action="/fan/{{singleFan._id}}?_method=PUT" method="POST">
 
+    <label>Rename Your Fan Setup</label>
+    <input type ="text" name="name" value="{{singleFan.name}}"/>
+
     <label>Manufacturer:</label>
     <select type="text" name="brand">
         <option>Corsail</option>

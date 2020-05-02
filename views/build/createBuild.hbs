@@ -4,6 +4,61 @@
 
     <label>Name Your Build:</label>
     <input type="text" name="name" required/>
+    <label>Select Your MotherBoard:</label>
+
+        <select name="mbId">        
+            {{#each allMbs}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+        </select>
+
+        <select name="cpuId">        
+            {{#each allCpus}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+        </select>
+
+        <select name="ramId">        
+            {{#each allRams}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+        </select>
+
+        <select name="gpuId">        
+            {{#each allGpus}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+        </select>
+
+        <select name="psuId">        
+            {{#each allPsus}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+        </select>
+
+        <select name="cpuCoolerId">        
+            {{#each allCpuCoolers}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+        </select>
+
+        <select name="gpuCoolerId">        
+            {{#each allGpuCoolers}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+        </select>
+
+        <select name="caseId">        
+            {{#each allCases}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+        </select>
+
+        <select name="fanId">        
+            {{#each allFans}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+        </select>
+
     <input type="submit" value ="Post Your New Build"/>
-    
 </form>

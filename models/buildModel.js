@@ -3,6 +3,15 @@ const Schema = mongoose.Schema
 
 const buildSchema = new Schema({
     name: String,
+    mbId: String,
+    cpuId: String,
+    ramId: String,
+    gpuId: String,
+    psuId: String,
+    cpuCoolerId: String,
+    gpuCoolerId: String,
+    caseId: String,
+    fanId: String
 })
 
 const buildList = mongoose.model('build', buildSchema)

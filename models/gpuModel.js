@@ -2,6 +2,7 @@ const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
 
 const gpuSchema = new Schema({
+    name: String,
     brand: String,
     series: String,
     memory: String,

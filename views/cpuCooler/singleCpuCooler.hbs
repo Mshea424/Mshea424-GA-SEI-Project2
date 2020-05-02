@@ -2,10 +2,12 @@
 
         <a href="/cpucooler/{{singleCpuCooler._id}}/edit">
             <button>
-                Choose other CPU Cooler
+                Update {{singleCpuCooler.name}}
             </button>
         </a>
         
+        {{name}}
+
         <div class="title">Manufacturer:</div>
         {{singleCpuCooler.brand}}
 
@@ -13,5 +15,5 @@
         {{singleCpuCooler.type}}
 
         <form action="/cpucooler/{{singleCpuCooler._id}}?_method=DELETE" method="POST">
-            <input type="submit" value="Remove from Build">
+            <input type="submit" value="Delete {{singleCpuCooler.name}}">
         </form>

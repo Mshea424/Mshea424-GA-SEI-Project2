@@ -2,6 +2,9 @@
 
 <form action="/case/{{singleCase._id}}?_method=PUT" method="POST">
 
+    <label>Rename Your PC Case</label>
+    <input type ="text" name="name" value="{{singleCase.name}}"/>
+
     <label>Manufacturer:</label>
     <select type="text" name="brand">
         <option>Corsail</option>

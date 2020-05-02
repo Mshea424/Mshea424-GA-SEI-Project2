@@ -1,5 +1,9 @@
 
-
+        <a href="/build">
+            <button>
+                Return to List of All Builds
+            </button>
+        </a>
         <a href="/build/{{singleBuild._id}}/edit">
             <button>
                 Update This Build
@@ -7,6 +11,162 @@
         </a>
 
         {{singleBuild.name}}
+
+        <div>Motherboard:</div>
+
+        {{singleMb.name}}
+
+        <div>Brand:</div>
+        {{singleMb.brand}}
+
+        <div>Size Class:</div>
+        {{singleMb.class}}
+        
+        <div>Socket Type:</div>
+        {{singleMb.socketType}}
+
+        <a href="/mb/{{singleMb._id}}/edit">Edit MB</a>
+
+
+        <div>CPU:</div>
+
+        {{singleCpu.name}}
+
+        <div>Brand:</div>
+        {{singleCpu.brand}}
+
+        <div>Number Of Cores:</div>
+        {{singleCpu.cores}}
+        
+        <div>Frequency:</div>
+        {{singleCpu.frequency}}
+
+        <div>Hyperthreading Enabeled:</div>
+        {{singleCpu.hyperthreading}}
+
+        <a href="/cpu/{{singleCpu._id}}/edit">Edit CPU</a>
+
+
+        <div>RAM:</div>
+
+        {{singleRam.name}}
+
+        <div>Brand:</div>
+        {{singleRam.brand}}
+
+        <div>Memory Capacity:</div>
+        {{singleRam.memory}}
+        
+        <div>Generation:</div>
+        {{singleRam.ddr}}
+
+        <div>Frequency:</div>
+        {{singleRam.frequency}}
+
+        <a href="/ram/{{singleRam._id}}/edit">Edit RAM</a>
+
+
+        <div>GPU:</div>
+
+        {{singleGpu.name}}
+
+        <div>Brand:</div>
+        {{singleGpu.brand}}
+
+        <div>Series:</div>
+        {{singleGpu.series}}
+        
+        <div>VRAM Capacity:</div>
+        {{singleGpu.memory}}
+
+        <div>VRAM Generation:</div>
+        {{singleGpu.ddr}}
+
+        <a href="/gpu/{{singleGpu._id}}/edit">Edit GPU</a>
+
+
+        <div>Power Supply:</div>
+
+        {{singlePsu.name}}
+
+        <div>Manufacturer:</div>
+        {{singlePsu.brand}}
+
+        <div>Max Power Output:</div>
+        {{singlePsu.watts}}
+        
+        <div>80+ Efficiency Rating:</div>
+        {{singlePsu.efficiency}}
+
+        <div>Cable Modularity:</div>
+        {{singlePsu.modularity}}
+
+        <a href="/psu/{{singlePsu._id}}/edit">Edit Power Supply</a>
+
+
+        <div>CPU Cooler:</div>
+
+        {{singleCpuCooler.name}}
+
+        <div>Manufacturer:</div>
+        {{singleCpuCooler.brand}}
+
+        <div>Cooler Design:</div>
+        {{singleCpuCooler.type}}
+
+        <a href="/cpucooler/{{singleCpu._id}}/edit">Edit CPU Cooler</a>
+
+
+        <div>GPU Cooler:</div>
+
+        {{singleGpuCooler.name}}
+
+        <div>Manufacturer:</div>
+        {{singleGpuCooler.brand}}
+
+        <div>Cooler Design:</div>
+        {{singleGpuCooler.type}}
+
+        <a href="/gpucooler/{{singleGpuCooler._id}}/edit">Edit GPU Cooler</a>
+
+
+        <div>Case:</div>
+
+        {{singleCase.name}}
+
+        <div>Manufacturer:</div>
+        {{singleCase.brand}}
+
+        <div>Case Size:</div>
+        {{singleCase.size}}
+        
+        <div>Viewport Type:</div>
+        {{singleCase.viewPort}}
+
+        <div>Watercooling Friendly:</div>
+        {{singleCase.waterCool}}
+
+        <a href="/case/{{singleCase._id}}/edit">Edit Case</a>
+
+
+        <div>Fan Setup:</div>
+
+        {{singleFan.name}}
+
+        <div>Manufacturer:</div>
+        {{singleFan.brand}}
+
+        <div>Fan Sizes:</div>
+        {{singleFan.size}}
+        
+        <div>Quantity:</div>
+        {{singleFan.quantity}}
+
+        <div>Radiators:</div>
+        {{singleFan.wcRad}}
+
+        <a href="/fan/{{singleFan._id}}/edit">Edit Fan Setup</a>
+
 
         <form action="/build/{{singleBuild._id}}?_method=DELETE" method="POST">
             <input type="submit" value="Delete this Build">

@@ -2,10 +2,12 @@
 
         <a href="/gpu/{{singleGpu._id}}/edit">
             <button>
-                Choose other GPU
+                Update {{singleGpu.name}}
             </button>
         </a>
         
+        {{name}}
+
         <div class="title">Manufacturer:</div>
         {{singleGpu.brand}}
         
@@ -19,5 +21,5 @@
         {{singleGpu.ddr}}
 
         <form action="/gpu/{{singleGpu._id}}?_method=DELETE" method="POST">
-            <input type="submit" value="Remove from Build">
+            <input type="submit" value="Delete {{singleGpu.name}}">
         </form>

@@ -2,8 +2,14 @@
 
 <form action="/build/{{singleBuild._id}}?_method=PUT" method="POST">
 
-    <label>Name of Build:</label>
-    <input type="text" name="name" value="{{singleBuild.name}}" required/>
+    <label>Build Name:</label>
+    <input type="text" name="name" value ="{{singleBuild.name}}" required/>
+    <label>Select MotherBoard:</label>
 
+        <select name="mbId">        
+            {{#each allMbs}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+        </select>
     <input type="submit" value ="Update Your Build"/>
 </form>

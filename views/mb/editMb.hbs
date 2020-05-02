@@ -1,6 +1,10 @@
-<h1>Change MB</h1>
+<h1>Edit Motherboard</h1>
 
 <form action="/mb/{{singleMb._id}}?_method=PUT" method="POST">
+    
+    <label>Rename Your Motherboard</label>
+    <input type ="text" name="name" value="{{singleMb.name}}"/>
+
     <label>Manufacturer:</label>
     <select type="text" name="brand" value="{{singleMb.brand}}">
         <option>ACES</option>
@@ -23,5 +27,5 @@
         <option>TeamBlue</option>
     </select>
 
-    <input type="submit" value ="Change to New MB"/>
+    <input type="submit" value ="Save Edits"/>
 </form>

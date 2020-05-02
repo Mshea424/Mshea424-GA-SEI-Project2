@@ -1,7 +1,11 @@
 <h1>Add New Motherboard</h1>
 
 <form action="/mb" method="POST">
-    <label>Manufacturer:</label>
+
+    <label>Name Your Motherboard</label>
+    <input type ="text" name="name" required/>
+
+    <label>Manufacturer:</label>    
     <select type="text" name="brand">
         <option>ACES</option>
         <option>EBGH</option>
@@ -23,5 +27,5 @@
         <option>TeamBlue</option>
     </select>
     
-    <input type="submit" value ="Add Motherboard to Build"/>
+    <input type="submit" value ="Add Motherboard to DataBase"/>
 </form>

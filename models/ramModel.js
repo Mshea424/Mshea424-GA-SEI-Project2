@@ -2,6 +2,7 @@ const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
 
 const ramSchema = new Schema({
+    name: String,
     brand: String,
     memory: String,
     ddr: String,

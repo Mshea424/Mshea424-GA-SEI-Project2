@@ -2,6 +2,7 @@ const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
 
 const cpuSchema = new Schema({
+    name: String,
     brand: String,
     cores: String,
     frequency: String,

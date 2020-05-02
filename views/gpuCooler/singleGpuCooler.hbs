@@ -2,10 +2,12 @@
 
         <a href="/gpucooler/{{singleGpuCooler._id}}/edit">
             <button>
-                Choose other GPU Cooler
+                Update {{singleGpuCooler.name}}
             </button>
         </a>
         
+        {{name}}
+
         <div class="title">Manufacturer:</div>
         {{singleGpuCooler.brand}}
 
@@ -13,5 +15,5 @@
         {{singleGpuCooler.type}}
 
         <form action="/gpucooler/{{singleGpuCooler._id}}?_method=DELETE" method="POST">
-            <input type="submit" value="Remove from Build">
+            <input type="submit" value="Delete {{singleGpuCooler.name}}">
         </form>

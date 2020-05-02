@@ -1,6 +1,10 @@
 <h1>Add New Case Fans + Radiators</h1>
 
 <form action="/fan" method="POST">
+
+    <label>Name Your Fan Setup</label>
+    <input type ="text" name="name" required/>
+
     <label>Manufacturer:</label>
     <select type="text" name="brand">
         <option>Corsail</option>
@@ -17,7 +21,7 @@
         <option>both 120mm + 140mm</option>
     </select>
 
-    <label>quantity:</label>
+    <label>Quantity:</label>
     <input type="number" min = 0 name="quantity"/>
 
     <label>Radiators:</label>
@@ -38,5 +42,5 @@
         <option>720mm Open-Loop-integrated</option>
     </select>
 
-    <input type="submit" value ="Add Fans to Build"/>
+    <input type="submit" value ="Add Fan Setup"/>
 </form>

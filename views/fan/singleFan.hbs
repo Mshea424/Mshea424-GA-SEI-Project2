@@ -2,10 +2,12 @@
 
         <a href="/fan/{{singleFan._id}}/edit">
             <button>
-                Change Fans + Radiators
+                Update {{singleFan.name}}
             </button>
         </a>
         
+        {{name}}
+
         <div class="title">Manufacturer:</div>
         {{singleFan.brand}}
 
@@ -19,5 +21,5 @@
         {{singleFan.wcRad}}
 
         <form action="/fan/{{singleFan._id}}?_method=DELETE" method="POST">
-            <input type="submit" value="Remove from Build">
+            <input type="submit" value="Delete {{singleFan.name}}">
         </form>

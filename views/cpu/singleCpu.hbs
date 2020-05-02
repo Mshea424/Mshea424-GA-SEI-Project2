@@ -2,9 +2,11 @@
 
         <a href="/cpu/{{singleCpu._id}}/edit">
             <button>
-                Choose other CPU
+                Update {{singleCpu.name}}
             </button>
         </a>
+
+        {{singleCpu.name}}
         
         <div class="title">Manufacturer:</div>
         {{singleCpu.brand}}
@@ -19,5 +21,5 @@
         {{singleCpu.hyperthreading}}
 
         <form action="/cpu/{{singleCpu._id}}?_method=DELETE" method="POST">
-            <input type="submit" value="Remove from Build">
+            <input type="submit" value="Delete {{singleCpu.name}}">
         </form>
