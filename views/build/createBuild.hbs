@@ -2,63 +2,81 @@
 
 <form action="/build" method="POST">
 
-    <label>Name Your Build:</label>
-    <input type="text" name="name" required/>
-    <label>Select Your MotherBoard:</label>
-
+    <div class="list-item">
+        <label>Name Your Build:</label>
+        <input type="text" name="name" required/>
+    </div>
+    <div class="list-item">
+        <label>Select Your MotherBoard:</label>
         <select name="mbId">        
             {{#each allMbs}}
             <option value="{{_id}}">{{name}}</option>
             {{/each}}
         </select>
-
+    </div>
+    <div class="list-item">
+        <label>Select Your CPU:</label>
         <select name="cpuId">        
             {{#each allCpus}}
             <option value="{{_id}}">{{name}}</option>
             {{/each}}
         </select>
-
+    </div>
+    <div>
+    <label>Select Your RAM Kit:</label>
         <select name="ramId">        
             {{#each allRams}}
             <option value="{{_id}}">{{name}}</option>
             {{/each}}
         </select>
-
+    </div>
+    <div>
+    <label>Select Your GPU:</label>
         <select name="gpuId">        
             {{#each allGpus}}
             <option value="{{_id}}">{{name}}</option>
             {{/each}}
         </select>
-
+    </div>
+    <div>
+    <label>Select Your Power Supply:</label>
         <select name="psuId">        
             {{#each allPsus}}
             <option value="{{_id}}">{{name}}</option>
             {{/each}}
         </select>
-
+    </div>
+    <div>
+    <label>Select Your CPU Cooler:</label>
         <select name="cpuCoolerId">        
             {{#each allCpuCoolers}}
             <option value="{{_id}}">{{name}}</option>
             {{/each}}
         </select>
-
+    </div>
+    <div>
+    <label>Select Your GPU Cooler:</label>
         <select name="gpuCoolerId">        
             {{#each allGpuCoolers}}
             <option value="{{_id}}">{{name}}</option>
             {{/each}}
         </select>
-
+    </div>
+    <div>
+    <label>Select Your PC Case:</label>
         <select name="caseId">        
             {{#each allCases}}
             <option value="{{_id}}">{{name}}</option>
             {{/each}}
         </select>
-
+    </div>
+    <div>
+    <label>Select Your Fan Setup:</label>
         <select name="fanId">        
             {{#each allFans}}
             <option value="{{_id}}">{{name}}</option>
             {{/each}}
         </select>
-
-    <input type="submit" value ="Post Your New Build"/>
+    </div>
+    <input class="add-button" type="submit" value ="Post Your New Build"/>
 </form>

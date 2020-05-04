@@ -1,17 +1,14 @@
 <h1>All PC Desktop Builds:</h1>
 
-<a href="/build/new">
-    <button>
-        Configure Your Own Build
-    </button>
+<a href="/build/new" class="add-button">
+        Add New +
 </a>
 
 {{#each allBuilds}}
     <a href="/build/{{_id}}">
-        <div class="list-item">
-            <div class ="item">
-                {{name}}
-            </div>
+        <div class="item-head">
+            {{name}}
+        </div>
         </div>
     </a>
 {{/each}}
