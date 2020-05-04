@@ -2,7 +2,7 @@ body {
     background-color: rgb(218, 230, 237);
 }
 
-.cpu-item {
+.list-item {
     display: flex;
     border-top: 2px solid black;
     margin-top: 10px;
