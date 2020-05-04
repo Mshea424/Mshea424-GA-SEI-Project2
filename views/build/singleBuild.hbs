@@ -1,17 +1,14 @@
 
-{{singleBuild.name}}
+<div class="build-head">
+    <div class="build-head-title">{{singleBuild.name}}</div>
+    <a class="build-head-return" href="/build"> <= Return to List of All Builds</a>
+</div>
 
-<a href="/build">
-    <button>Return to List of All Builds</button>
-</a>
+    <a href="/build/{{singleBuild._id}}/edit"><button>Edit {{singleBuild.name}}</button></a>
 
-<a href="/build/{{singleBuild._id}}/edit">
-    <button>Update This Build</button>
-</a>
-
-<form action="/build/{{singleBuild._id}}?_method=DELETE" method="POST">
-    <input type="submit" value="Delete this Build">
-</form>
+    <form action="/build/{{singleBuild._id}}?_method=DELETE" method="POST">
+        <input type="submit" value="Delete {{singleBuild.name}}">
+    </form>
 
 <div class="item-head">
     <div>Motherboard: {{singleMb.name}}</div>  
@@ -30,7 +27,15 @@
         <div>Socket Type:</div>
         <div class="item-value">{{singleMb.socketType}}</div>
     </div>
-    <a class="edit-button" href="/mb/{{singleMb._id}}/edit">Edit {{singleMb.name}}</a>    
+    <a class="edit-button" href="/mb/{{singleMb._id}}/edit">Edit {{singleMb.name}}</a>
+    <div>
+        <label>Select different Mb:</label>
+        <select name="mbId">        
+            {{#each allMbs}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+        </select>
+    </div>    
 </div>   
 
 <div class="item-head">  
@@ -40,19 +45,19 @@
 <div class="list-item">
     <div class="item">
         <div>Brand:</div>
-        {{singleCpu.brand}}
+        <div class="item-value">{{singleCpu.brand}}</div>
     </div>
     <div class="item">
         <div>Number Of Cores:</div>
-        {{singleCpu.cores}}
+        <div class="item-value">{{singleCpu.cores}}</div>
     </div>
     <div class="item">
         <div>Frequency:</div>
-        {{singleCpu.frequency}}
+        <div class="item-value">{{singleCpu.frequency}}</div>
     </div>
     <div class="item">
         <div>Hyperthreading Enabeled:</div>
-        {{singleCpu.hyperthreading}}
+        <div class="item-value">{{singleCpu.hyperthreading}}</div>
     </div>
     <a class="edit-button" href="/cpu/{{singleCpu._id}}/edit">Edit {{singleCpu.name}}</a>
 </div>
@@ -64,19 +69,19 @@
 <div class="list-item">
     <div class="item">       
         <div>Brand:</div>
-        {{singleRam.brand}}
+        <div class="item-value">{{singleRam.brand}}</div>
     </div>
     <div class="item"> 
         <div>Memory Capacity:</div>
-        {{singleRam.memory}}
+        <div class="item-value">{{singleRam.memory}}</div>
     </div>   
     <div class="item"> 
         <div>Generation:</div>
-        {{singleRam.ddr}}
+        <div class="item-value">{{singleRam.ddr}}</div>
     </div>
     <div class="item">
         <div>Frequency:</div>
-        {{singleRam.frequency}}
+        <div class="item-value">{{singleRam.frequency}}</div>
     </div>
     <a class="edit-button" href="/ram/{{singleRam._id}}/edit">Edit {{singleRam.name}}</a>
 </div>
@@ -88,19 +93,19 @@
 <div class="list-item">
     <div class="item">
         <div>Brand:</div>
-        {{singleGpu.brand}}
+        <div class="item-value">{{singleGpu.brand}}</div>
     </div>
     <div class="item">
         <div>Series:</div>
-        {{singleGpu.series}}
+        <div class="item-value">{{singleGpu.series}}</div>
     </div>
     <div class="item">
         <div>VRAM Capacity:</div>
-        {{singleGpu.memory}}
+        <div class="item-value">{{singleGpu.memory}}</div>
     </div>
     <div class="item">
         <div>VRAM Generation:</div>
-        {{singleGpu.ddr}}
+        <div class="item-value">{{singleGpu.ddr}}</div>
     </div>
     <a class="edit-button" href="/gpu/{{singleGpu._id}}/edit">Edit {{singleGpu.name}}</a>
 </div>
@@ -112,19 +117,19 @@
 <div class="list-item">
     <div class="item">
         <div>Manufacturer:</div>
-        {{singlePsu.brand}}
+        <div class="item-value">{{singlePsu.brand}}</div>
     </div>
     <div class="item">
         <div>Max Power Output:</div>
-        {{singlePsu.watts}}
+        <div class="item-value">{{singlePsu.watts}}</div>
     </div>
     <div class="item">
         <div>80+ Efficiency Rating:</div>
-        {{singlePsu.efficiency}}
+        <div class="item-value">{{singlePsu.efficiency}}</div>
     </div>
     <div class="item">
         <div>Cable Modularity:</div>
-        {{singlePsu.modularity}}
+        <div class="item-value">{{singlePsu.modularity}}</div>
     </div>
     <a class="edit-button" href="/psu/{{singlePsu._id}}/edit">Edit {{singlePsu.name}}</a>
 </div>
@@ -136,11 +141,11 @@
 <div class="list-item">
     <div class="item">
         <div>Manufacturer:</div>
-        {{singleCpuCooler.brand}}
+        <div class="item-value">{{singleCpuCooler.brand}}</div>
     </div>
     <div class="item">
         <div>Cooler Design:</div>
-        {{singleCpuCooler.type}}
+        <div class="item-value">{{singleCpuCooler.type}}</div>
     </div>
     <a class="edit-button" href="/cpucooler/{{singleCpu._id}}/edit">Edit {{singleCpuCooler.name}}</a>
 </div>
@@ -152,11 +157,11 @@
 <div class="list-item">
     <div class="item">
         <div>Manufacturer:</div>
-        {{singleGpuCooler.brand}}
+        <div class="item-value">{{singleGpuCooler.brand}}</div>
     </div>
     <div class="item">
         <div>Cooler Design:</div>
-        {{singleGpuCooler.type}}
+        <div class="item-value">{{singleGpuCooler.type}}</div>
     </div>
     <a class="edit-button" href="/gpucooler/{{singleGpuCooler._id}}/edit">Edit {{singleGpuCooler.name}}</a>
 </div>
@@ -168,19 +173,19 @@
 <div class="list-item">
     <div class="item">
         <div>Manufacturer:</div>
-        {{singleCase.brand}}
+        <div class="item-value">{{singleCase.brand}}</div>
     </div>
     <div class="item">
         <div>Case Size:</div>
-        {{singleCase.size}}
+        <div class="item-value">{{singleCase.size}}</div>
     </div>
     <div class="item">
         <div>Viewport Type:</div>
-        {{singleCase.viewPort}}
+        <div class="item-value">{{singleCase.viewPort}}</div>
     </div>
     <div class="item">
         <div>Watercooling Friendly:</div>
-        {{singleCase.waterCool}}
+        <div class="item-value">{{singleCase.waterCool}}</div>
     </div>
     <a class="edit-button" href="/case/{{singleCase._id}}/edit">Edit {{singleCase.name}}</a>
 </div>
@@ -192,19 +197,19 @@
 <div class="list-item">
     <div class="item">
         <div>Manufacturer:</div>
-        {{singleFan.brand}}
+        <div class="item-value">{{singleFan.brand}}</div>
     </div>
     <div class="item">
         <div>Fan Sizes:</div>
-        {{singleFan.size}}
+        <div class="item-value">{{singleFan.size}}</div>
     </div>
     <div class="item">
         <div>Quantity:</div>
-        {{singleFan.quantity}}
+        <div class="item-value">{{singleFan.quantity}}</div>
     </div> 
     <div class="item">
         <div>Radiators:</div>
-        {{singleFan.wcRad}}
+        <div class="item-value">{{singleFan.wcRad}}</div>
     </div>
     <a class="edit-button" href="/fan/{{singleFan._id}}/edit">Edit {{singleFan.name}}</a>
 </div>
