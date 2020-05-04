@@ -1,5 +1,6 @@
 const express = require('express')
 
+const landingRouter = require('./controllers/landingController.js')
 const cpuRouter = require('./controllers/cpuController.js')
 const mbRouter = require('./controllers/mbController.js')
 const psuRouter = require('./controllers/psuController.js')
@@ -23,10 +24,8 @@ server.use(express.urlencoded())
 server.use(express.json())
 server.use(express.static(__dirname + '/public'))
 
-server.get('/', (req, res) => {
-    res.json('ok')
-})
 
+server.use('/home', landingRouter)
 server.use('/cpu', cpuRouter)
 server.use('/mb', mbRouter)
 server.use('/psu', psuRouter)
