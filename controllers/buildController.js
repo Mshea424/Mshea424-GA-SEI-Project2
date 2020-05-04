@@ -12,19 +12,19 @@ const caseModel = require('../models/caseModel.js')
 const fanModel = require('../models/fanModel.js')
 
 // get All
-buildRouter.get('/', (req, res) =>{
+buildRouter.get('/', (req, res) => {
     buildModel.getAllBuilds()
-    .then((allBuilds) => {
-        res.render('build/allBuilds.hbs', {allBuilds})
-    })
-    .catch(err => {
-        console.log(err)
-        res.json(err)
-    })
+        .then((allBuilds) => {
+            res.render('build/allBuilds.hbs', { allBuilds })
+        })
+        .catch(err => {
+            console.log(err)
+            res.json(err)
+        })
 })
 
 //Go to Create new Build page
-buildRouter.get('/new', async (req, res) =>{
+buildRouter.get('/new', async (req, res) => {
     const allMbs = await mbModel.getAllMbs()
     const allCpus = await cpuModel.getAllCpus()
     const allRams = await ramModel.getAllRams()
@@ -34,38 +34,47 @@ buildRouter.get('/new', async (req, res) =>{
     const allGpuCoolers = await gpuCoolerModel.getAllGpuCoolers()
     const allCases = await caseModel.getAllCases()
     const allFans = await fanModel.getAllFans()
-    res.render('build/createBuild.hbs', {allMbs, allCpus, allRams, allGpus, allPsus, allCpuCoolers, allGpuCoolers, allCases, allFans})
+    res.render('build/createBuild.hbs', { allMbs, allCpus, allRams, allGpus, allPsus, allCpuCoolers, allGpuCoolers, allCases, allFans })
 })
 
 //Go To Edit Build Page
-buildRouter.get('/:id/edit', (req, res) => {
-    buildModel.getOneBuild(req.params.id)
-    .then((singleBuild) => {
-        res.render('build/editBuild.hbs', {singleBuild})
-    })
-    .catch(err => {
+buildRouter.get('/:id/edit', async (req, res) => {
+    try {
+        const allMbs = await mbModel.getAllMbs()
+        const allCpus = await cpuModel.getAllCpus()
+        const allRams = await ramModel.getAllRams()
+        const allGpus = await gpuModel.getAllGpus()
+        const allPsus = await psuModel.getAllPsus()
+        const allCpuCoolers = await cpuCoolerModel.getAllCpuCoolers()
+        const allGpuCoolers = await gpuCoolerModel.getAllGpuCoolers()
+        const allCases = await caseModel.getAllCases()
+        const allFans = await fanModel.getAllFans()
+        const singleBuild = await buildModel.getOneBuild(req.params.id)
+        res.render('build/editBuild.hbs', { singleBuild, allMbs, allCpus, allRams, allGpus, allPsus, allCpuCoolers, allGpuCoolers, allCases, allFans })
+
+    } catch (err) {
         console.log(err)
         res.json(err)
-    })
+    }
 })
 
 
 // get ONE
 buildRouter.get('/:id', async (req, res) => {
     try {
-    const singleBuild = await buildModel.getOneBuild(req.params.id)
-    const singleMb = await mbModel.getOneMb(singleBuild.mbId)
-    const singleCpu = await cpuModel.getOneCpu(singleBuild.cpuId)
-    const singleRam = await ramModel.getOneRam(singleBuild.ramId)
-    const singleGpu = await gpuModel.getOneGpu(singleBuild.gpuId)
-    const singlePsu = await psuModel.getOnePsu(singleBuild.psuId)
-    const singleCpuCooler = await cpuCoolerModel.getOneCpuCooler(singleBuild.cpuCoolerId)
-    const singleGpuCooler = await gpuCoolerModel.getOneGpuCooler(singleBuild.gpuCoolerId)
-    const singleCase = await caseModel.getOneCase(singleBuild.caseId)
-    const singleFan = await fanModel.getOneFan(singleBuild.fanId)
-    
-        res.render('build/singleBuild.hbs', {singleBuild, singleMb, singleCpu, singleRam, singleGpu, singlePsu, singleCpuCooler, singleGpuCooler, singleCase, singleFan})
-    } catch(err) {
+        const singleBuild = await buildModel.getOneBuild(req.params.id)
+        const singleMb = await mbModel.getOneMb(singleBuild.mbId)
+        const singleCpu = await cpuModel.getOneCpu(singleBuild.cpuId)
+        const singleRam = await ramModel.getOneRam(singleBuild.ramId)
+        const singleGpu = await gpuModel.getOneGpu(singleBuild.gpuId)
+        const singlePsu = await psuModel.getOnePsu(singleBuild.psuId)
+        const singleCpuCooler = await cpuCoolerModel.getOneCpuCooler(singleBuild.cpuCoolerId)
+        const singleGpuCooler = await gpuCoolerModel.getOneGpuCooler(singleBuild.gpuCoolerId)
+        const singleCase = await caseModel.getOneCase(singleBuild.caseId)
+        const singleFan = await fanModel.getOneFan(singleBuild.fanId)
+
+        res.render('build/singleBuild.hbs', { singleBuild, singleMb, singleCpu, singleRam, singleGpu, singlePsu, singleCpuCooler, singleGpuCooler, singleCase, singleFan })
+    } catch (err) {
         console.log(err)
         res.json(err)
     }
