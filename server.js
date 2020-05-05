@@ -32,10 +32,10 @@ server.use('/psu', psuRouter)
 server.use('/ram', ramRouter)
 server.use('/build', buildRouter)
 server.use('/case', caseRouter)
-server.use('/cpuCooler', cpuCoolerRouter)
+server.use('/cpucooler', cpuCoolerRouter)
 server.use('/fan', fanRouter)
 server.use('/gpu', gpuRouter)
-server.use('/gpuCooler', gpuCoolerRouter)
+server.use('/gpucooler', gpuCoolerRouter)
 
 server.listen(port, () => {
     console.log(`server started on ${port}`)
