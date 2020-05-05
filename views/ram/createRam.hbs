@@ -1,39 +1,50 @@
-<h1>Add New RAM Kit</h1>
+<div class="build-head">
+    <div class="build-head-title">Add new RAM Kit</div>
+    <a class="build-head-return" href="/ram">
+        <= Return to All RAM Kits</a>
+</div>
 
 <form action="/ram" method="POST">
 
-    <label>Name Your RAM Kit</label>
-    <input type ="text" name="name" required/>
+    <div class="list-item">
 
-    <label>Manufacturer:</label>
-    <select type="text" name="brand">
-        <option>Corsail</option>
-        <option>HiperEggs</option>
-        <option>oG.Skillz</option>
-        <option>CrewChill</option>
-    </select>
+        <label>Name Your RAM Kit</label>
+        <input type="text" name="name" required />
+        <br />
+        <label>Manufacturer:</label>
+        <select type="text" name="brand">
+            <option>Corsail</option>
+            <option>HiperEggs</option>
+            <option>oG.Skillz</option>
+            <option>CrewChill</option>
+        </select>
+        <br />
+        <label>Memory Capacity:</label>
+        <select type="text" name="memory">
+            <option>4 GigaBytes</option>
+            <option>8 GigaBytes</option>
+            <option>16 GigaBytes</option>
+            <option>32 GigaBytes</option>
+        </select>
+        <br />
+        <label>Generation:</label>
+        <select type="text" name="ddr">
+            <option>DDR 3</option>
+            <option>DDR 4</option>
+        </select>
+        <br />
+        <label>Frequency:</label>
+        <select type="text" name="frequency">
+            <option>2000 mHz</option>
+            <option>2600 mHz</option>
+            <option>3200 mHz</option>
+            <option>3800 mHz</option>
+        </select>
 
-    <label>Memory Capacity:</label>
-    <select type="text" name="memory">
-        <option>4 GigaBytes</option>
-        <option>8 GigaBytes</option>
-        <option>16 GigaBytes</option>
-        <option>32 GigaBytes</option>
-    </select>
+    </div>
 
-    <label>Generation:</label>
-    <select type="text" name="ddr">
-        <option>DDR 3</option>
-        <option>DDR 4</option>
-    </select>
+    <div class="footer">
+        <input class="footer-update" type="submit" value="Add RAM Kit" />
+    </div>
 
-    <label>Frequency:</label>
-    <select type="text" name="frequency">
-        <option>2000 mHz</option>
-        <option>2600 mHz</option>
-        <option>3200 mHz</option>
-        <option>3800 mHz</option>
-    </select>
-
-    <input type="submit" value ="Add RAM Kit to Build"/>
 </form>

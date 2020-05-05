@@ -1,41 +1,47 @@
-<h1>Add New CPU</h1>
-
+<div class="build-head">
+    <div class="build-head-title">Add new CPU</div>
+    <a class="build-head-return" href="/cpu">
+        <= Return to All CPUs</a>
+</div>
 <form action="/cpu" method="POST">
-    
-    <label>Name Your CPU</label>
-    <input type ="text" name="name" required/>
 
-    <label>Manufacturer:</label>
-    <select type="text" name="brand">
-        <option>TeamRed.llc</option>
-        <option>TeamBlue.llc</option>
-    </select>
-
-    <label>Number Of Cores:</label>
-    <select type="text" name="cores">
-        <option>2</option>
-        <option>4</option>
-        <option>6</option>
-        <option>8</option>
-        <option>16</option>
-        <option>24</option>
-        <option>32</option>
-    </select>
-
-    <label>Frequency:</label>
-    <select type="text" name="frequency">
-        <option>2.5 gHz</option>
-        <option>3.2 gHz</option>
-        <option>3.8 gHz</option>
-        <option>4.3 gHz</option>
-        <option>5.0 gHz</option>
-    </select>
-
-    <label>Hyperthreading Enabled:</label>
-    <select type="text" name="hyperthreading">
-        <option>Yes</option>
-        <option>No</option>
-    </select>
-
-    <input type="submit" value ="Add CPU to Build"/>
+    <div class="list-item">
+        <label>Name Your CPU</label>
+        <input type="text" name="name" required />
+        <br />
+        <label>Manufacturer:</label>
+        <select type="text" name="brand">
+            <option>TeamRed.llc</option>
+            <option>TeamBlue.llc</option>
+        </select>
+        <br />
+        <label>Number Of Cores:</label>
+        <select type="text" name="cores">
+            <option>2</option>
+            <option>4</option>
+            <option>6</option>
+            <option>8</option>
+            <option>16</option>
+            <option>24</option>
+            <option>32</option>
+        </select>
+        <br />
+        <label>Frequency:</label>
+        <select type="text" name="frequency">
+            <option>2.5 gHz</option>
+            <option>3.2 gHz</option>
+            <option>3.8 gHz</option>
+            <option>4.3 gHz</option>
+            <option>5.0 gHz</option>
+        </select>
+        <br />
+        <label>Hyperthreading Enabled:</label>
+        <select type="text" name="hyperthreading">
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+    </div>
+    <div class="footer">
+        <input class="footer-update" type="submit" value="Add CPU" />
+    </div>
 </form>

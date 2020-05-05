@@ -1,25 +1,35 @@
-<h1>Add New CPU Cooler</h1>
+<div class="build-head">
+    <div class="build-head-title">Add new CPU Cooler</div>
+    <a class="build-head-return" href="/cpucooler"> <= Return to All CPU Coolers</a>
+</div>
 
 <form action="/cpucooler" method="POST">
 
-    <label>Name Your CPU Cooler</label>
-    <input type ="text" name="name" required/>
+    <div class="list-item">
 
-    <label>Manufacturer:</label>
-    <select type="text" name="brand">
-        <option>Corsail</option>
-        <option>TeamRed.llc</option>
-        <option>Bsilent</option>
-        <option>BKwb</option>
-    </select>
+        <label>Name Your CPU Cooler</label>
+        <input type="text" name="name" required />
+        <br />
+        <label>Manufacturer:</label>
+        <select type="text" name="brand">
+            <option>Corsail</option>
+            <option>TeamRed.llc</option>
+            <option>Bsilent</option>
+            <option>BKwb</option>
+        </select>
+        <br />
+        <label>Cooler Design:</label>
+        <select type="text" name="type">
+            <option>CPU stock (air)</option>
+            <option>Air (aftermarket)</option>
+            <option>Closed-loop Water (AIO)</option>
+            <option>Open-loop Water (block)</option>
+        </select>
 
-    <label>Cooler Design:</label>
-    <select type="text" name="type">
-        <option>CPU stock (air)</option>
-        <option>Air (aftermarket)</option>
-        <option>Closed-loop Water (AIO)</option>
-        <option>Open-loop Water (block)</option>
-    </select>
+    </div>
 
-    <input type="submit" value ="Add CPU Cooler to Build"/>
+    <div class="footer">
+        <input class="footer-update" type="submit" value="Add CPU Cooler" />
+    </div>
+
 </form>

@@ -1,39 +1,50 @@
-<h1>Add New PC Desktop Case</h1>
+<div class="build-head">
+    <div class="build-head-title">Add new PC Desktop Case</div>
+    <a class="build-head-return" href="/case">
+        <= Return to All PC Desktop Cases</a>
+</div>
 
 <form action="/case" method="POST">
 
-    <label>Name Your Case</label>
-    <input type ="text" name="name" required/>
+    <div class="list-item">
 
-    <label>Manufacturer:</label>
-    <select type="text" name="brand">
-        <option>Corsail</option>
-        <option>ThurmLSteak</option>
-        <option>MZXD</option>
-        <option>JUULrMastER</option>
-    </select>
+        <label>Name Your Case</label>
+        <input type="text" name="name" required />
+        <br />
+        <label>Manufacturer:</label>
+        <select type="text" name="brand">
+            <option>Corsail</option>
+            <option>ThurmLSteak</option>
+            <option>MZXD</option>
+            <option>JUULrMastER</option>
+        </select>
+        <br />
+        <label>Case Size:</label>
+        <select type="text" name="size">
+            <option>Small Form Factor</option>
+            <option>Mini Tower</option>
+            <option>Mid Tower</option>
+            <option>Full Tower</option>
+        </select>
+        <br />
+        <label>Viewport Type:</label>
+        <select type="text" name="viewPort">
+            <option>None</option>
+            <option>Acrylic</option>
+            <option>Tempered Glass</option>
+            <option>Mesh</option>
+        </select>
+        <br />
+        <label>Watercooling Friendly:</label>
+        <select type="text" name="waterCool">
+            <option>Yes</option>
+            <option>No</option>
+        </select>
 
-    <label>Case Size:</label>
-    <select type="text" name="size">
-        <option>Small Form Factor</option>
-        <option>Mini Tower</option>
-        <option>Mid Tower</option>
-        <option>Full Tower</option>
-    </select>
+    </div>
 
-    <label>Viewport Type:</label>
-    <select type="text" name="viewPort">
-        <option>None</option>
-        <option>Acrylic</option>
-        <option>Tempered Glass</option>
-        <option>Mesh</option>
-    </select>
+    <div class="footer">
+        <input class="footer-update" type="submit" value="Add PC Desktop Case" />
+    </div>
 
-    <label>Watercooling Friendly:</label>
-    <select type="text" name="waterCool">
-        <option>Yes</option>
-        <option>No</option>
-    </select>
-
-    <input type="submit" value ="Add Case to Build"/>
 </form>

@@ -2,13 +2,14 @@
     <div class="build-head-title">Add new Motherboard</div>
     <a class="build-head-return" href="/mb"> <= Return to All Motherboards</a>
 </div>
+
 <form action="/mb" method="POST">
 
-<div class="list-item">
+    <div class="list-item">
 
         <label>Name Your Motherboard</label>
-        <input type ="text" name="name" value="{{singleMb.name}}" required/>
-<br/>
+        <input type="text" name="name" value="{{singleMb.name}}" required />
+        <br/>
         <label>Manufacturer:</label>
         <select type="text" name="brand" value="{{singleMb.brand}}">
             <option>ACES</option>
@@ -16,7 +17,7 @@
             <option>Gigabit</option>
             <option>NSI</option>
         </select>
-<br/>
+        <br/>
         <label>Size Class:</label>
         <select type="text" name="class" value="{{singleMb.class}}">
             <option>Mini-ITX</option>
@@ -24,12 +25,17 @@
             <option>ATX (standard)</option>
             <option>XL-ATX</option>
         </select>
-<br/>
+        <br/>
         <label>Status:</label>
         <select type="text" name="socketType" value="{{singleMb.socketType}}">
             <option>TeamRed</option>
             <option>TeamBlue</option>
         </select>
-</div>
-    <input class="add-button" type="submit" value ="Add Motherboard to DataBase"/>
+
+    </div>
+
+    <div class="footer">
+        <input class="footer-update" type="submit" value="Add Motherboard" />
+    </div>
+
 </form>

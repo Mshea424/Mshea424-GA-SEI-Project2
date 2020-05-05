@@ -1,23 +1,34 @@
-<h1>Add New GPU Cooler</h1>
+<div class="build-head">
+    <div class="build-head-title">Add new GPU Cooler</div>
+    <a class="build-head-return" href="/gpucooler"> <= Return to All GPU Coolers</a>
+</div>
+
 
 <form action="/gpucooler" method="POST">
 
-    <label>Name Your GPU Cooler</label>
-    <input type ="text" name="name" required/>
+    <div class="list-item">
 
-    <label>Manufacturer:</label>
-    <select type="text" name="brand">
-        <option>Same as GPU</option>
-        <option>MZXD</option>
-        <option>BKwb</option>
-    </select>
+        <label>Name Your GPU Cooler</label>
+        <input type="text" name="name" required />
+        <br />
+        <label>Manufacturer:</label>
+        <select type="text" name="brand">
+            <option>Same as GPU</option>
+            <option>MZXD</option>
+            <option>BKwb</option>
+        </select>
+        <br />
+        <label>Cooler Design:</label>
+        <select type="text" name="type">
+            <option>Integrated (Air)</option>
+            <option>Hybrid Water (AIO)</option>
+            <option>Open-loop Water (Block)</option>
+        </select>
 
-    <label>Cooler Design:</label>
-    <select type="text" name="type">
-        <option>Integrated (Air)</option>
-        <option>Hybrid Water (AIO)</option>
-        <option>Open-loop Water (Block)</option>
-    </select>
+    </div>
 
-    <input type="submit" value ="Add GPU Cooler to Build"/>
+    <div class="footer">
+        <input class="footer-update" type="submit" value="Add GPU Cooler" />
+    </div>
+
 </form>
