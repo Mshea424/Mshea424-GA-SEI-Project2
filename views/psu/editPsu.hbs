@@ -1,44 +1,55 @@
-<h1>Change Power Supply</h1>
+<div class="build-head">
+    <div class="build-head-title">Edit {{singlePsu.name}}</div>
+    <a class="build-head-return" href="/psu/{{singlePsu._id}}">
+        <= Return to {{singlePsu.name}}</a>
+</div>
+
 
 <form action="/psu/{{singlePsu._id}}?_method=PUT" method="POST">
 
-    <label>Rename Your PSU</label>
-    <input type ="text" name="name" value="{{singlePsu.name}}"/>
+    <div class="list-item">
 
-    <label>Manufacturer:</label>
-    <select type="text" name="brand" value="{{singlePsu.brand}}">
-        <option>EBGH</option>
-        <option>Corsail</option>
-        <option>SeaSoning</option>
-    </select>
+        <label>Rename Your Power Supply Unit</label>
+        <input type="text" name="name" value="{{singlePsu.name}}"/>
+        <br />
+        <label>Manufacturer:</label>
+        <select type="text" name="brand">
+            <option>EBGH</option>
+            <option>Corsail</option>
+            <option>SeaSoning</option>
+        </select>
+        <br />
+        <label>Max Power Output:</label>
+        <select type="text" name="watts">
+            <option>400 watts</option>
+            <option>500 watts</option>
+            <option>750 watts</option>
+            <option>850 watts</option>
+            <option>1000 watts</option>
+            <option>1200 watts</option>
+        </select>
+        <br />
+        <label>80+ Efficiency Rating:</label>
+        <select type="text" name="efficiency">
+            <option>None</option>
+            <option>Bronze</option>
+            <option>Silver</option>
+            <option>Gold</option>
+            <option>Platinum</option>
+            <option>Titanium</option>
+        </select>
+        <br />
+        <label>Cable Modularity:</label>
+        <select type="text" name="modularity">
+            <option>None</option>
+            <option>Semi-Modular</option>
+            <option>Modular</option>
+        </select>
 
-    <label>Max Power Output:</label>
-    <select type="text" name="watts" value="{{singlePsu.watts}}">
-        <option>400 watts</option>
-        <option>500 watts</option>
-        <option>750 watts</option>
-        <option>850 watts</option>
-        <option>1000 watts</option>
-        <option>1200 watts</option>
-    </select>
+    </div>
 
+    <div class="footer">
+        <input class="footer-update" type="submit" value="Save Edits" />
+    </div>
 
-    <label>80+ Efficiency Rating:</label>
-    <select type="text" name="efficiency" value="{{singlePsu.efficiency}}">
-        <option>None</option>
-        <option>Bronze</option>
-        <option>Silver</option>
-        <option>Gold</option>
-        <option>Platinum</option>
-        <option>Titanium</option>
-    </select>
-
-    <label>Modularity:</label>
-    <select type="text" name="modularity" value="{{singlePsu.modularity}}">
-        <option>None</option>
-        <option>Semi-Modular</option>
-        <option>Modular</option>
-    </select>
-    
-    <input type="submit" value ="Change to New Power Supply"/>
 </form>

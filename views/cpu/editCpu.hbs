@@ -1,41 +1,47 @@
-<h1>Change CPU</h1>
+<div class="build-head">
+    <div class="build-head-title">Edit {{singleCpu.name}}</div>
+    <a class="build-head-return" href="/cpu/{{singleCpu._id}}"> <= Return to {{singleCpu.name}}</a>
+</div>
 
 <form action="/cpu/{{singleCpu._id}}?_method=PUT" method="POST">
 
-    <label>Rename Your CPU</label>
-    <input type ="text" name="name" value="{{singleCpu.name}}"/>
-
-    <label>Manufacturer:</label>
-    <select type="text" name="brand" value="{{singleCpu.brand}}">
-        <option>TeamRed.llc</option>
-        <option>TeamBlue.llc</option>
-    </select>
-
-    <label>Number of Cores:</label>
-    <select type="text" name="cores" value="{{singleCpu.cores}}">
-        <option>2</option>
-        <option>4</option>
-        <option>6</option>
-        <option>8</option>
-        <option>16</option>
-        <option>24</option>
-        <option>32</option>
-    </select>
-    
-    <label>Highest Core Frequency:</label>
-    <select type="text" name="status" value="{{singleCpu.frequency}}">
-        <option>2.5 gHz</option>
-        <option>3.2 gHz</option>
-        <option>3.8 gHz</option>
-        <option>4.3 gHz</option>
-        <option>5.0 gHz</option>
-    </select>
-
-    <label>Hyperthreading Enabeled:</label>
-    <select type="text" name="hyperthreading" value="{{singleCpu.hyperthreading}}">
-        <option>Yes</option>
-        <option>No</option>
-    </select>
-
-    <input type="submit" value ="Change to New CPU"/>
+        <div class="list-item">
+        <label>Rename Your CPU</label>
+        <input type="text" name="name" value="{{singleCpu.name}}" required />
+        <br />
+        <label>Manufacturer:</label>
+        <select type="text" name="brand">
+            <option>TeamRed.llc</option>
+            <option>TeamBlue.llc</option>
+        </select>
+        <br />
+        <label>Number Of Cores:</label>
+        <select type="text" name="cores">
+            <option>2</option>
+            <option>4</option>
+            <option>6</option>
+            <option>8</option>
+            <option>16</option>
+            <option>24</option>
+            <option>32</option>
+        </select>
+        <br />
+        <label>Frequency:</label>
+        <select type="text" name="frequency">
+            <option>2.5 gHz</option>
+            <option>3.2 gHz</option>
+            <option>3.8 gHz</option>
+            <option>4.3 gHz</option>
+            <option>5.0 gHz</option>
+        </select>
+        <br />
+        <label>Hyperthreading Enabled:</label>
+        <select type="text" name="hyperthreading">
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+    </div>
+    <div class="footer">
+        <input class="footer-update" type="submit" value="Save Edits" />
+    </div>
 </form>

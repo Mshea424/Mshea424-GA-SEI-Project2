@@ -1,46 +1,58 @@
-<h1>Change Fans + Radiators</h1>
+<div class="build-head">
+    <div class="build-head-title">Edit {{singleFan.name}}</div>
+    <a class="build-head-return" href="/fan/{{singleFan._id}}">
+        <= Return to {{singleFan.name}}</a>
+</div>
+
 
 <form action="/fan/{{singleFan._id}}?_method=PUT" method="POST">
 
-    <label>Rename Your Fan Setup</label>
-    <input type ="text" name="name" value="{{singleFan.name}}"/>
+    <div class="list-item">
 
-    <label>Manufacturer:</label>
-    <select type="text" name="brand">
-        <option>Corsail</option>
-        <option>NotCua</option>
-        <option>Bsilent</option>
-        <option>ThurmLSteak</option>
-    </select>
+        <label>Rename Your Fan Setup</label>
+        <input type="text" name="name" value="{{singleFan.name}}" />
+        <br />
+        <label>Manufacturer:</label>
+        <select type="text" name="brand">
+            <option>Corsail</option>
+            <option>NotCua</option>
+            <option>Bsilent</option>
+            <option>ThurmLSteak</option>
+        </select>
+        <br />
+        <label>Fan Sizes:</label>
+        <select type="text" name="size">
+            <option>100mm</option>
+            <option>120mm</option>
+            <option>140mm</option>
+            <option>both 120mm + 140mm</option>
+        </select>
+        <br />
+        <label>Quantity:</label>
+        <input type="number" min=0 name="quantity" required/>
+        <br />
+        <label>Radiators:</label>
+        <select type="text" name="wcRad">
+            <option>None</option>
+            <option>120mm AIO-integrated</option>
+            <option>140mm AIO-integrated</option>
+            <option>240mm AIO-integrated</option>
+            <option>280mm AIO-integrated</option>
+            <option>360mm AIO-integrated</option>
+            <option>120mm Open-Loop-integrated</option>
+            <option>140mm Open-Loop-integrated</option>
+            <option>240mm Open-Loop-integrated</option>
+            <option>280mm Open-Loop-integrated</option>
+            <option>360mm Open-Loop-integrated</option>
+            <option>480mm Open-Loop-integrated</option>
+            <option>560mm Open-Loop-integrated</option>
+            <option>720mm Open-Loop-integrated</option>
+        </select>
 
-    <label>Fan Sizes:</label>
-    <select type="text" name="size">
-        <option>100mm</option>
-        <option>120mm</option>
-        <option>140mm</option>
-        <option>both 120mm + 140mm</option>
-    </select>
+    </div>
 
-    <label>quantity:</label>
-    <input type="number" min = 0 name="quantity"/>
+    <div class="footer">
+        <input class="footer-update" type="submit" value="Save Edits" />
+    </div>
 
-    <label>Radiators:</label>
-    <select type="text" name="wcRad">
-        <option>None</option>
-        <option>120mm AIO-integrated</option>
-        <option>140mm AIO-integrated</option>
-        <option>240mm AIO-integrated</option>
-        <option>280mm AIO-integrated</option>
-        <option>360mm AIO-integrated</option>
-        <option>120mm Open-Loop-integrated</option>
-        <option>140mm Open-Loop-integrated</option>
-        <option>240mm Open-Loop-integrated</option>
-        <option>280mm Open-Loop-integrated</option>
-        <option>360mm Open-Loop-integrated</option>
-        <option>480mm Open-Loop-integrated</option>
-        <option>560mm Open-Loop-integrated</option>
-        <option>720mm Open-Loop-integrated</option>
-    </select>
-    
-    <input type="submit" value ="Update Fans"/>
 </form>

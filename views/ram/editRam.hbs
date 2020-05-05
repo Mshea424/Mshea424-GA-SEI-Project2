@@ -1,39 +1,51 @@
-<h1>Change RAM Kit</h1>
+<div class="build-head">
+    <div class="build-head-title">Edit {{singleRam.name}}</div>
+    <a class="build-head-return" href="/ram/{{singleRam._id}}">
+        <= Return to {{singleRam.name}}</a>
+</div>
+
 
 <form action="/ram/{{singleRam._id}}?_method=PUT" method="POST">
 
-    <label>Rename Your RAM Kit</label>
-    <input type ="text" name="name" value="{{singleRam.name}}"/>
+    <div class="list-item">
 
-    <label>Manufacturer:</label>
-    <select type="text" name="brand" value="{{singleRam.brand}}">
-        <option>Corsail</option>
-        <option>HiperEggs</option>
-        <option>oG.Skillz</option>
-        <option>CrewChill</option>
-    </select>
+        <label>Rename Your RAM Kit</label>
+        <input type="text" name="name" value="{{singleRam.name}}"/>
+        <br />
+        <label>Manufacturer:</label>
+        <select type="text" name="brand">
+            <option>Corsail</option>
+            <option>HiperEggs</option>
+            <option>oG.Skillz</option>
+            <option>CrewChill</option>
+        </select>
+        <br />
+        <label>Memory Capacity:</label>
+        <select type="text" name="memory">
+            <option>4 GigaBytes</option>
+            <option>8 GigaBytes</option>
+            <option>16 GigaBytes</option>
+            <option>32 GigaBytes</option>
+        </select>
+        <br />
+        <label>Generation:</label>
+        <select type="text" name="ddr">
+            <option>DDR 3</option>
+            <option>DDR 4</option>
+        </select>
+        <br />
+        <label>Frequency:</label>
+        <select type="text" name="frequency">
+            <option>2000 mHz</option>
+            <option>2600 mHz</option>
+            <option>3200 mHz</option>
+            <option>3800 mHz</option>
+        </select>
 
-    <label>Memory Capacity:</label>
-    <select type="text" name="memory" value="{{singleRam.memory}}">
-        <option>4 GigaBytes</option>
-        <option>8 GigaBytes</option>
-        <option>16 GigaBytes</option>
-        <option>32 GigaBytes</option>
-    </select>
+    </div>
 
-    <label>Generation:</label>
-    <select type="text" name="ddr" value="{{singleRam.ddr}}">
-        <option>DDR 3</option>
-        <option>DDR 4</option>
-    </select>
+    <div class="footer">
+        <input class="footer-update" type="submit" value="Save edits" />
+    </div>
 
-    <label>Frequency:</label>
-    <select type="text" name="frequency" value="{{singleRam.frequency}}">
-        <option>2000 mHz</option>
-        <option>2600 mHz</option>
-        <option>3200 mHz</option>
-        <option>3800 mHz</option>
-    </select>
-    
-    <input type="submit" value ="Change to New RAM Kit"/>
 </form>

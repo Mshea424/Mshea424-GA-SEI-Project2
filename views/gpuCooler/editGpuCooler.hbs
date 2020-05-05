@@ -1,23 +1,35 @@
-<h1>Change GPU Cooler</h1>
+<div class="build-head">
+    <div class="build-head-title">Edit {{singleGpuCooler.name}}</div>
+    <a class="build-head-return" href="/gpucooler/{{singleGpuCooler._id}}">
+        <= Return to {{singleGpuCooler.name}}</a>
+</div>
+
 
 <form action="/gpucooler/{{singleGpuCooler._id}}?_method=PUT" method="POST">
 
-    <label>Rename Your GPU Cooler</label>
-    <input type ="text" name="name" value="{{singleGpuCooler.name}}"/>
+    <div class="list-item">
 
-    <label>Manufacturer:</label>
-    <select type="text" name="brand">
-        <option>Same as GPU</option>
-        <option>MZXD</option>
-        <option>BKwb</option>
-    </select>
+        <label>Rename Your GPU Cooler</label>
+        <input type="text" name="name" value="{{singleGpuCooler.name}}"/>
+        <br />
+        <label>Manufacturer:</label>
+        <select type="text" name="brand">
+            <option>Same as GPU</option>
+            <option>MZXD</option>
+            <option>BKwb</option>
+        </select>
+        <br />
+        <label>Cooler Design:</label>
+        <select type="text" name="type">
+            <option>Integrated (Air)</option>
+            <option>Hybrid Water (AIO)</option>
+            <option>Open-loop Water (Block)</option>
+        </select>
 
-    <label>Cooler Design:</label>
-    <select type="text" name="type">
-        <option>Integrated (Air)</option>
-        <option>Hybrid Water (AIO)</option>
-        <option>Open-loop Water (Block)</option>
-    </select>
-    
-    <input type="submit" value ="Change to New GPU Cooler"/>
+    </div>
+
+    <div class="footer">
+        <input class="footer-update" type="submit" value="Save Edits" />
+    </div>
+
 </form>

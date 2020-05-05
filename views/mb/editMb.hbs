@@ -1,14 +1,15 @@
 <div class="build-head">
     <div class="build-head-title">Edit {{singleMb.name}}</div>
-    <a class="build-head-return" href="/mb/{{singleMb._id}}"> <= Return to {{singleMb.name}}</a>
+    <a class="build-head-return" href="/mb/{{singleMb._id}}">
+        <= Return to {{singleMb.name}}</a>
+</div>
 
-
-    <form action="/mb/{{singleMb._id}}?_method=PUT" method="POST">
-<div class="list-item">
+<form action="/mb/{{singleMb._id}}?_method=PUT" method="POST">
+    <div class="list-item">
 
         <label>Rename Your Motherboard</label>
-        <input type ="text" name="name" value="{{singleMb.name}}"/>
-<br/>
+        <input type="text" name="name" value="{{singleMb.name}}" />
+        <br />
         <label>Manufacturer:</label>
         <select type="text" name="brand" value="{{singleMb.brand}}">
             <option>ACES</option>
@@ -16,7 +17,7 @@
             <option>Gigabit</option>
             <option>NSI</option>
         </select>
-<br/>
+        <br />
         <label>Size Class:</label>
         <select type="text" name="class" value="{{singleMb.class}}">
             <option>Mini-ITX</option>
@@ -24,14 +25,14 @@
             <option>ATX (standard)</option>
             <option>XL-ATX</option>
         </select>
-<br/>
+        <br />
         <label>Status:</label>
         <select type="text" name="socketType" value="{{singleMb.socketType}}">
             <option>TeamRed</option>
             <option>TeamBlue</option>
         </select>
-</div>
-<div class="footer">
-        <input class="footer-update" type="submit" value ="Save Edits"/>
-        </div>
-    </form>
+    </div>
+    <div class="footer">
+        <input class="footer-update" type="submit" value="Save Edits" />
+    </div>
+</form>

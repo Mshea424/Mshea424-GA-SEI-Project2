@@ -1,58 +1,70 @@
 
-<h1>Change GPU</h1>
+<div class="build-head">
+    <div class="build-head-title">Edit {{singleGpu.name}}</div>
+    <a class="build-head-return" href="/gpu/{{singleGpu._id}}">
+        <= Return to {{singleGpu.name}}</a>
+</div>
+
 
 <form action="/gpu/{{singleGpu._id}}?_method=PUT" method="POST">
 
-    <label>Rename Your GPU</label>
-    <input type ="text" name="name" value="{{singleGpu.name}}"/>
+        <div class="list-item">
+        
+        <label>Rename Your GPU</label>
+        <input type="text" name="name" value="{{singleGpu.name}}" required />
+        <br/>
+        <label>Manufacturer:</label>
+        <select type="text" name="brand">
+            <option>FE (TeamGreen.llc)</option>
+            <option>Aces (TeamGreen.llc)</option>
+            <option>EBGH (TeamGreen.llc)</option>
+            <option>NSI (TeamGreen.llc)</option>
+            <option>Gigabit (TeamGreen.llc)</option>
+            <option>FE (TeamRed.llc)</option>
+            <option>Aces (TeamRed.llc)</option>
+            <option>EBGH (TeamRed.llc)</option>
+            <option>NSI (TeamRed.llc)</option>
+            <option>Gigabit (TeamRed.llc)</option>
+        </select>
+        <br />
+        <label>Card Series:</label>
+        <select type="text" name="series">
+            <option>106 (TG)</option>
+            <option>107 (TG)</option>
+            <option>108 (TG)</option>
+            <option>108T (TG)</option>
+            <option>206 (TG)</option>
+            <option>207 (TG)</option>
+            <option>208 (TG)</option>
+            <option>208T (TG)</option>
+            <option>55D (TR)</option>
+            <option>56D (TR)</option>
+            <option>57D (TR)</option>
+            <option>58D (TR)</option>
+            <option>55DD (TR)</option>
+            <option>56DD (TR)</option>
+            <option>57DD XD (TR)</option>
+        </select>
+        <br />
+        <label>VRAM Capacity:</label>
+        <select type="text" name="memory">
+            <option>4 GigaBytes</option>
+            <option>6 GigaBytes</option>
+            <option>8 GigaBytes</option>
+            <option>11 GigaBytes</option>
+        </select>
+        <br />
+        <label>VRAM Generation:</label>
+        <select type="text" name="ddr">
+            <option>GDDR 5</option>
+            <option>GDDR 5x</option>
+            <option>GDDR 6</option>
+        </select>
 
-    <label>Manufacturer:</label>
-    <select type="text" name="brand">
-        <option>FE (TeamGreen.llc)</option>
-        <option>Aces (TeamGreen.llc)</option>
-        <option>EBGH (TeamGreen.llc)</option>
-        <option>NSI (TeamGreen.llc)</option>
-        <option>Gigabit (TeamGreen.llc)</option>
-        <option>FE (TeamRed.llc)</option>
-        <option>Aces (TeamRed.llc)</option>
-        <option>EBGH (TeamRed.llc)</option>
-        <option>NSI (TeamRed.llc)</option>
-        <option>Gigabit (TeamRed.llc)</option>
-    </select>
+    </div>
 
-    <label>Card Series:</label>
-    <select type="text" name="series">
-        <option>106 (TG)</option>
-        <option>107 (TG)</option>
-        <option>108 (TG)</option>
-        <option>108T (TG)</option>
-        <option>206 (TG)</option>
-        <option>207 (TG)</option>
-        <option>208 (TG)</option>
-        <option>208T (TG)</option>
-        <option>55D (TR)</option>
-        <option>56D (TR)</option>
-        <option>57D (TR)</option>
-        <option>58D (TR)</option>
-        <option>55DD (TR)</option>
-        <option>56DD (TR)</option>
-        <option>57DD XD (TR)</option>
-    </select>
-    
-    <label>VRAM Capacity:</label>
-    <select type="text" name="memory">
-        <option>4 GigaBytes</option>
-        <option>6 GigaBytes</option>
-        <option>8 GigaBytes</option>
-        <option>11 GigaBytes</option>
-    </select>
+    <div class="footer">
+        <input class="footer-update" type="submit" value="Save Edits"/>
+    </div>
 
-    <label>VRAM Generation:</label>
-    <select type="text" name="ddr">
-        <option>GDDR 5</option>
-        <option>GDDR 5x</option>
-        <option>GDDR 6</option>
-    </select>
-    
-    <input type="submit" value ="Change to New GPU"/>
 </form>
