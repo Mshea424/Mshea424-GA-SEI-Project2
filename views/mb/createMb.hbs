@@ -1,31 +1,35 @@
-<h1>Add New Motherboard</h1>
-<a href="/mb">Return to All Motherboards</a>
+<div class="build-head">
+    <div class="build-head-title">Add new Motherboard</div>
+    <a class="build-head-return" href="/mb"> <= Return to All Motherboards</a>
+</div>
 <form action="/mb" method="POST">
 
-    <label>Name Your Motherboard</label>
-    <input type ="text" name="name" required/>
+<div class="list-item">
 
-    <label>Manufacturer:</label>    
-    <select type="text" name="brand">
-        <option>ACES</option>
-        <option>EBGH</option>
-        <option>Gigabit</option>
-        <option>NSI</option>
-    </select>
-
-    <label>Size Class:</label>
-    <select type="text" name="class">
-        <option>Mini-ITX</option>
-        <option>Micro-ATX</option>
-        <option>ATX (standard)</option>
-        <option>XL-ATX</option>
-    </select>
-    
-    <label>CPU Socket Type:</label>
-    <select type="text" name="socketType">
-        <option>TeamRed</option>
-        <option>TeamBlue</option>
-    </select>
-    
-    <input type="submit" value ="Add Motherboard to DataBase"/>
+        <label>Name Your Motherboard</label>
+        <input type ="text" name="name" value="{{singleMb.name}}"/>
+<br/>
+        <label>Manufacturer:</label>
+        <select type="text" name="brand" value="{{singleMb.brand}}">
+            <option>ACES</option>
+            <option>EBGH</option>
+            <option>Gigabit</option>
+            <option>NSI</option>
+        </select>
+<br/>
+        <label>Size Class:</label>
+        <select type="text" name="class" value="{{singleMb.class}}">
+            <option>Mini-ITX</option>
+            <option>Micro-ATX</option>
+            <option>ATX (standard)</option>
+            <option>XL-ATX</option>
+        </select>
+<br/>
+        <label>Status:</label>
+        <select type="text" name="socketType" value="{{singleMb.socketType}}">
+            <option>TeamRed</option>
+            <option>TeamBlue</option>
+        </select>
+</div>
+    <input class="add-button" type="submit" value ="Add Motherboard to DataBase"/>
 </form>

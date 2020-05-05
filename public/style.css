@@ -31,10 +31,15 @@ a {
 }
 .add-button {
     background-color: red;
-    color: white;
+    color: whitesmoke;
     display: inline-block;
-    padding: 10px;
+    padding: 6px;
     border-radius: 5px;
+    font-size: 16px;
+}
+.add-button:hover {
+    border: 2px solid darkgray;
+    padding: 4px;
 }
 .edit-button {
     position: absolute;
@@ -70,4 +75,23 @@ a {
 }
 .build-head-title {
     font-size: 40px;
+}
+.footer {
+    position: relative;
+}
+.footer-delete {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+.footer-update {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    background-color: green;
+    border: 2px solid black;
+    border-radius: 3px;
 }

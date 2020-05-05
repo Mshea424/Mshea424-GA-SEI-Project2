@@ -3,29 +3,14 @@
     <a class="build-head-return" href="/"> <= Return to Home Page</a>
 </div>
 
-<a href="/mb/new">
-    <button>
-        Add New MB
-    </button>
+<a href="/mb/new" class="add-button">
+        Add New +
 </a>
 
 {{#each allMbs}}
     <a href="/mb/{{_id}}">
-        <div class="list-item">
+        <div class="item-head">
             {{name}}
-            <div class ="item">
-                <div class="title">Manufacturer:</div>
-                {{brand}}
-            </div>
-            <div class ="item">
-                <div class="title">Size Class:</div>
-                {{class}}
-            </div>
-            <div class ="item">
-                <div class="title">CPU Socket Type:</div>
-                {{socketType}}
-            </div>
-            </div>
         </div>
     </a>
 {{/each}}
