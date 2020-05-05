@@ -2,32 +2,15 @@
     <div class="build-head-title">All Power Supply Units:</div>
     <a class="build-head-return" href="/"> <= Return to Home Page</a>
 </div>
-<a href="/psu/new">
-    <button>
-        Add New Power Supply Unit
-    </button>
+<a href="/psu/new" class="add-button">
+        Add New +
 </a>
 
 {{#each allPsus}}
     <a href="/psu/{{_id}}">
-        <div class="list-item">
+        <div class="item-head">
             {{name}}
-            <div class ="item">
-                <div class="title">Manufacturer:</div>
-                {{brand}}
-            </div>
-            <div class ="item">
-                <div class="title">Max Power Output:</div>
-                {{watts}}
-            </div>
-            <div class ="item">
-                <div class="title">80+ Efficiency Rating:</div>
-                {{efficiency}}
-            </div>
-            <div class ="item">
-                <div class="title">Modularity:</div>
-                {{modularity}}
-            </div>
         </div>
     </a>
 {{/each}}
+

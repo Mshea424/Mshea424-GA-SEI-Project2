@@ -4,32 +4,15 @@
 </div>
 
 
-<a href="/ram/new">
-    <button>
-        Add New RAM Kit
-    </button>
+<a href="/ram/new" class="add-button">
+        Add New +
 </a>
 
 {{#each allRams}}
     <a href="/ram/{{_id}}">
-        <div class="list-item">
+        <div class="item-head">
             {{name}}
-            <div class ="item">
-                <div class="title">Manufacturer:</div>
-                {{brand}}
-            </div>
-            <div class ="item">
-                <div class="title">Memory Capacity:</div>
-                {{memory}}
-            </div>
-            <div class ="item">
-                <div class="title">Generation:</div>
-                {{ddr}}
-            </div>
-            <div class ="item">
-                <div class="title">Frequency:</div>
-                {{frequency}}
-            </div>
         </div>
     </a>
 {{/each}}
+

@@ -2,32 +2,15 @@
     <div class="build-head-title">All GPUs:</div>
     <a class="build-head-return" href="/"> <= Return to Home Page</a>
 </div>
-<a href="/gpu/new">
-    <button>
-        Add New GPU
-    </button>
+<a href="/gpu/new" class="add-button">
+        Add New +
 </a>
 
 {{#each allGpus}}
     <a href="/gpu/{{_id}}">
-        <div class="list-item">
+        <div class="item-head">
             {{name}}
-            <div class ="item">
-                <div class="title">Manufacturer:</div>
-                {{brand}}
-            </div>
-            <div class ="item">
-                <div class="title">Card Series:</div>
-                {{series}}
-            </div>
-            <div class ="item">
-                <div class="title">VRAM Capacity:</div>
-                {{memory}}
-            </div>
-            <div class ="item">
-                <div class="title">VRAM Generation:</div>
-                {{ddr}}
-            </div>
         </div>
     </a>
 {{/each}}
+

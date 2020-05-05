@@ -2,32 +2,15 @@
     <div class="build-head-title">All Case Fans + Radiators:</div>
     <a class="build-head-return" href="/"> <= Return to Home Page</a>
 </div>
-<a href="/fan/new">
-    <button>
-        Add New Case Fans
-    </button>
+<a href="/fan/new" class="add-button">
+        Add New +
 </a>
 
 {{#each allFans}}
     <a href="/fan/{{_id}}">
-        <div class="list-item">
+        <div class="item-head">
             {{name}}
-            <div class ="item">
-                <div class="title">Manufacturer:</div>
-                {{brand}}
-            </div>
-            <div class ="item">
-                <div class="title">Fan Sizes:</div>
-                {{size}}
-            </div>
-            <div class ="item">
-                <div class="title">Quantity:</div>
-                {{quantity}}
-            </div>
-            <div class ="item">
-                <div class="title">Radiators:</div>
-                {{wcRad}}
-            </div>
         </div>
     </a>
 {{/each}}
+

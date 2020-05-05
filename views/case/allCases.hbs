@@ -2,32 +2,15 @@
     <div class="build-head-title">All PC Desktop Cases:</div>
     <a class="build-head-return" href="/"> <= Return to Home Page</a>
 </div>
-<a href="/case/new">
-    <button>
-        Add New Case
-    </button>
+<a href="/case/new" class="add-button">
+        Add New +
 </a>
 
 {{#each allCases}}
     <a href="/case/{{_id}}">
-        <div class="list-item">
+        <div class="item-head">
             {{name}}
-            <div class ="item">
-                <div class="title">Manufacturer:</div>
-                {{brand}}
-            </div>
-            <div class ="item">
-                <div class="title">Case Size:</div>
-                {{size}}
-            </div>
-            <div class ="item">
-                <div class="title">Viewport Type:</div>
-                {{viewPort}}
-            </div>
-            <div class ="item">
-                <div class="title">Watercooling Friendly:</div>
-                {{waterCool}}
-            </div>
         </div>
     </a>
 {{/each}}
+

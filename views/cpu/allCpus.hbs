@@ -4,32 +4,14 @@
 </div>
 
 
-<a href="/cpu/new">
-    <button>
-        Add New CPU
-    </button>
+<a href="/cpu/new" class="add-button">
+        Add New +
 </a>
 
 {{#each allCpus}}
     <a href="/cpu/{{_id}}">
-        <div class="list-item">
+        <div class="item-head">
             {{name}}
-            <div class ="item">
-                <div class="title">Manufacturer:</div>
-                {{brand}}
-            </div>
-            <div class ="item">
-                <div class="title">Number of Cores:</div>
-                {{cores}}
-            </div>
-            <div class ="item">
-                <div class="title">Highest Core Frequency:</div>
-                {{frequency}}
-            </div>
-            <div class ="item">
-                <div class="title">Hyperthreading Enabeled:</div>
-                {{hyperthreading}}
-            </div>
         </div>
     </a>
 {{/each}}

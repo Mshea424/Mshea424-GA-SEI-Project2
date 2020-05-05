@@ -2,24 +2,15 @@
     <div class="build-head-title">All CPU Coolers:</div>
     <a class="build-head-return" href="/"> <= Return to Home Page</a>
 </div>
-<a href="/cpucooler/new">
-    <button>
-        Add New CPU Cooler
-    </button>
+<a href="/cpucooler/new" class="add-button">
+        Add New +
 </a>
 
 {{#each allCpuCoolers}}
     <a href="/cpucooler/{{_id}}">
-        <div class="list-item">
+        <div class="item-head">
             {{name}}
-            <div class ="item">
-                <div class="title">Manufacturer:</div>
-                {{brand}}
-            </div>
-            <div class ="item">
-                <div class="title">Cooler Design:</div>
-                {{type}}
-            </div>
         </div>
     </a>
 {{/each}}
+
