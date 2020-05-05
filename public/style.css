@@ -1,6 +1,7 @@
 body {
     background-color: rgb(242, 242, 242);
     font-family: 'Roboto', sans-serif;
+    margin: 30px;
 }
 .item-head {
     background-color: rgba(104, 50, 50, 1);
@@ -78,6 +79,7 @@ a {
 }
 .footer {
     position: relative;
+    margin-bottom: 200px;
 }
 .footer-delete {
     position: absolute;

@@ -4,12 +4,6 @@
     <a class="build-head-return" href="/build"> <= Return to List of All Builds</a>
 </div>
 
-    <a href="/build/{{singleBuild._id}}/edit"><button>Edit {{singleBuild.name}}</button></a>
-
-    <form action="/build/{{singleBuild._id}}?_method=DELETE" method="POST">
-        <input type="submit" value="Delete {{singleBuild.name}}">
-    </form>
-
 <div class="item-head">
     <div>Motherboard: {{singleMb.name}}</div>  
 </div>
@@ -27,7 +21,7 @@
         <div>Socket Type:</div>
         <div class="item-value">{{singleMb.socketType}}</div>
     </div>
-    <a class="edit-button" href="/mb/{{singleMb._id}}/edit">Edit {{singleMb.name}}</a>
+    <a class="edit-button" href="/mb/{{singleMb._id}}/edit">Go to {{singleMb.name}} & Edit</a>
 </div>   
 
 <div class="item-head">  
@@ -51,7 +45,7 @@
         <div>Hyperthreading Enabeled:</div>
         <div class="item-value">{{singleCpu.hyperthreading}}</div>
     </div>
-    <a class="edit-button" href="/cpu/{{singleCpu._id}}/edit">Edit {{singleCpu.name}}</a>
+    <a class="edit-button" href="/cpu/{{singleCpu._id}}/edit">Go to {{singleCpu.name}} & Edit</a>
 </div>
 
 <div class="item-head">
@@ -75,7 +69,7 @@
         <div>Frequency:</div>
         <div class="item-value">{{singleRam.frequency}}</div>
     </div>
-    <a class="edit-button" href="/ram/{{singleRam._id}}/edit">Edit {{singleRam.name}}</a>
+    <a class="edit-button" href="/ram/{{singleRam._id}}/edit">Go to {{singleRam.name}} & Edit</a>
 </div>
 
 <div class="item-head">
@@ -99,7 +93,7 @@
         <div>VRAM Generation:</div>
         <div class="item-value">{{singleGpu.ddr}}</div>
     </div>
-    <a class="edit-button" href="/gpu/{{singleGpu._id}}/edit">Edit {{singleGpu.name}}</a>
+    <a class="edit-button" href="/gpu/{{singleGpu._id}}/edit">Go to {{singleGpu.name}} & Edit</a>
 </div>
 
 <div class="item-head">
@@ -123,7 +117,7 @@
         <div>Cable Modularity:</div>
         <div class="item-value">{{singlePsu.modularity}}</div>
     </div>
-    <a class="edit-button" href="/psu/{{singlePsu._id}}/edit">Edit {{singlePsu.name}}</a>
+    <a class="edit-button" href="/psu/{{singlePsu._id}}/edit">Go to {{singlePsu.name}} & Edit</a>
 </div>
 
 <div class="item-head">
@@ -139,7 +133,7 @@
         <div>Cooler Design:</div>
         <div class="item-value">{{singleCpuCooler.type}}</div>
     </div>
-    <a class="edit-button" href="/cpucooler/{{singleCpu._id}}/edit">Edit {{singleCpuCooler.name}}</a>
+    <a class="edit-button" href="/cpucooler/{{singleCpuCooler._id}}/edit">Go to {{singleCpuCooler.name}} & Edit</a>
 </div>
 
 <div class="item-head">
@@ -155,7 +149,7 @@
         <div>Cooler Design:</div>
         <div class="item-value">{{singleGpuCooler.type}}</div>
     </div>
-    <a class="edit-button" href="/gpucooler/{{singleGpuCooler._id}}/edit">Edit {{singleGpuCooler.name}}</a>
+    <a class="edit-button" href="/gpucooler/{{singleGpuCooler._id}}/edit">Go to {{singleGpuCooler.name}} & Edit</a>
 </div>
 
 <div class="item-head">
@@ -179,7 +173,7 @@
         <div>Watercooling Friendly:</div>
         <div class="item-value">{{singleCase.waterCool}}</div>
     </div>
-    <a class="edit-button" href="/case/{{singleCase._id}}/edit">Edit {{singleCase.name}}</a>
+    <a class="edit-button" href="/case/{{singleCase._id}}/edit">Go to {{singleCase.name}} & Edit</a>
 </div>
 
 <div class="item-head">
@@ -203,6 +197,16 @@
         <div>Radiators:</div>
         <div class="item-value">{{singleFan.wcRad}}</div>
     </div>
-    <a class="edit-button" href="/fan/{{singleFan._id}}/edit">Edit {{singleFan.name}}</a>
+    <a class="edit-button" href="/fan/{{singleFan._id}}/edit">Go to {{singleFan.name}} & Edit</a>
 </div>
 
+<div class="footer">
+<a href="/build/{{singleBuild._id}}/edit">
+    <button class="footer-update">
+        Update {{singleBuild.name}}
+    </button>
+</a>
+<form action="/build/{{singleBuild._id}}?_method=DELETE" method="POST">
+    <input class="footer-delete" type="submit" value="Delete {{singleBuild.name}}">
+</form>
+</div>

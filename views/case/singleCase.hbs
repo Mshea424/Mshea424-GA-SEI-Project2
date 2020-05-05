@@ -1,25 +1,36 @@
+<div class="build-head">
+    <div class="build-head-title">{{singleCase.name}}</div>
+    <a class="build-head-return" href="/case"> <= Return to All PC Desktop Cases</a>
+</div>
 
 
-        <a href="/case/{{singleCase._id}}/edit">
-            <button>
-                Update {{singleCase.name}}
-            </button>
-        </a>
-        
-        {{name}}
+<div class="list-item">
+    <div class="item">
+        <div>Manufacturer:</div>
+        <div class="item-value">{{singleCase.brand}}</div>
+    </div>
+    <div class="item">
+        <div>Size Class:</div>
+        <div class="item-value">{{singleCase.size}}</div>
+    </div>
+    <div class="item">
+        <div>Viewport Type:</div>
+        <div class="item-value">{{singleCase.viewPort}}</div>
+    </div>
+    <div class="item">
+        <div>Watercooling Friendly:</div>
+        <div class="item-value">{{singleCase.waterCool}}</div>
+    </div>
+</div>
 
-        <div class="title">Manufacturer:</div>
-        {{singleCase.brand}}
+<div class="footer">
+<a href="/case/{{singleCase._id}}/edit">
+    <button class="footer-update">
+        Update {{singleCase.name}}
+    </button>
+</a>
+<form action="/case/{{singleCase._id}}?_method=DELETE" method="POST">
+    <input class="footer-delete" type="submit" value="Delete {{singleCase.name}}">
+</form>
+</div>
 
-        <div class="title">Size:</div>
-        {{singleCase.size}}
-
-        <div class="title">Viewport Type:</div>
-        {{singleCase.viewPort}}
-
-        <div class="title">Watercooling Friendly:</div>
-        {{singleCase.waterCool}}
-
-        <form action="/case/{{singleCase._id}}?_method=DELETE" method="POST">
-            <input type="submit" value="Delete {{singleCase.name}}">
-        </form>

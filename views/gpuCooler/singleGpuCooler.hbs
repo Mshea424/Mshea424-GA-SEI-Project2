@@ -1,19 +1,27 @@
+<div class="build-head">
+    <div class="build-head-title">{{singleGpuCooler.name}}</div>
+    <a class="build-head-return" href="/gpucooler"> <= Return to All GPU Coolers</a>
+</div>
 
 
-        <a href="/gpucooler/{{singleGpuCooler._id}}/edit">
-            <button>
-                Update {{singleGpuCooler.name}}
-            </button>
-        </a>
-        
-        {{name}}
+<div class="list-item">
+    <div class="item">
+        <div>Manufacturer:</div>
+        <div class="item-value">{{singleGpuCooler.brand}}</div>
+    </div>
+    <div class="item">
+        <div>Cooler Design:</div>
+        <div class="item-value">{{singleGpuCooler.type}}</div>
+    </div>
+</div>
 
-        <div class="title">Manufacturer:</div>
-        {{singleGpuCooler.brand}}
-
-        <div class="title">Cooler Design:</div>
-        {{singleGpuCooler.type}}
-
-        <form action="/gpucooler/{{singleGpuCooler._id}}?_method=DELETE" method="POST">
-            <input type="submit" value="Delete {{singleGpuCooler.name}}">
-        </form>
+<div class="footer">
+<a href="/gpucooler/{{singleGpuCooler._id}}/edit">
+    <button class="footer-update">
+        Update {{singleGpuCooler.name}}
+    </button>
+</a>
+<form action="/gpucooler/{{singleGpuCooler._id}}?_method=DELETE" method="POST">
+    <input class="footer-delete" type="submit" value="Delete {{singleGpuCooler.name}}">
+</form>
+</div>

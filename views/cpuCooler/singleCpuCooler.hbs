@@ -1,19 +1,27 @@
+<div class="build-head">
+    <div class="build-head-title">{{singleCpuCooler.name}}</div>
+    <a class="build-head-return" href="/cpucooler"> <= Return to All CPU Coolers</a>
+</div>
 
 
-        <a href="/cpucooler/{{singleCpuCooler._id}}/edit">
-            <button>
-                Update {{singleCpuCooler.name}}
-            </button>
-        </a>
-        
-        {{name}}
+<div class="list-item">
+    <div class="item">
+        <div>Manufacturer:</div>
+        <div class="item-value">{{singleCpuCooler.brand}}</div>
+    </div>
+    <div class="item">
+        <div>Cooler Design:</div>
+        <div class="item-value">{{singleCpuCooler.type}}</div>
+    </div>
+</div>
 
-        <div class="title">Manufacturer:</div>
-        {{singleCpuCooler.brand}}
-
-        <div class="title">Cooler Design:</div>
-        {{singleCpuCooler.type}}
-
-        <form action="/cpucooler/{{singleCpuCooler._id}}?_method=DELETE" method="POST">
-            <input type="submit" value="Delete {{singleCpuCooler.name}}">
-        </form>
+<div class="footer">
+<a href="/cpucooler/{{singleCpuCooler._id}}/edit">
+    <button class="footer-update">
+        Update {{singleCpucooler.name}}
+    </button>
+</a>
+<form action="/cpucooler/{{singleCpuCooler._id}}?_method=DELETE" method="POST">
+    <input class="footer-delete" type="submit" value="Delete {{singleCpuCooler.name}}">
+</form>
+</div>

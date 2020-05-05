@@ -1,25 +1,37 @@
+<div class="build-head">
+    <div class="build-head-title">{{singlePsu.name}}</div>
+    <a class="build-head-return" href="/psu"> <= Return to All Power Supply Units</a>
+</div>
 
 
-        <a href="/psu/{{singlePsu._id}}/edit">
-            <button>
-                Update {{singlePsu.name}}
-            </button>
-        </a>
-        
-        {{name}}
+<div class="list-item">
+    <div class="item">
+        <div>Manufacturer:</div>
+        <div class="item-value">{{singlePsu.brand}}</div>
+    </div>
+    <div class="item">
+        <div>Max Power Output:</div>
+        <div class="item-value">{{singlePsu.watts}}</div>
+    </div>
+    <div class="item">
+        <div>80+ Efficiency Rating:</div>
+        <div class="item-value">{{singlePsu.efficiency}}</div>
+    </div>
+    <div class="item">
+        <div>Cable Modularity:</div>
+        <div class="item-value">{{singlePsu.modularity}}</div>
+    </div>
+</div>
 
-        <div class="title">Manufacturer:</div>
-        {{singlePsu.brand}}
+<div class="footer">
+<a href="/psu/{{singlePsu._id}}/edit">
+    <button class="footer-update">
+        Update {{singlePsu.name}}
+    </button>
+</a>
+<form action="/psu/{{singlePsu._id}}?_method=DELETE" method="POST">
+    <input class="footer-delete" type="submit" value="Delete {{singlePsu.name}}">
+</form>
+</div>
 
-        <div class="title">Max Power Output:</div>
-        {{singlePsu.watts}}
 
-        <div class="title">80+ Efficiency Rating:</div>
-        {{singlePsu.efficiency}}
-
-        <div class="title">Modularity:</div>
-        {{singlePsu.modularity}}
-
-        <form action="/psu/{{singlePsu._id}}?_method=DELETE" method="POST">
-            <input type="submit" value="Delete {{singlePsu.name}}">
-        </form>

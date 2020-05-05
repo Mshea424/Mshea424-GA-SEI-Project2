@@ -1,25 +1,36 @@
+<div class="build-head">
+    <div class="build-head-title">{{singleCpu.name}}</div>
+    <a class="build-head-return" href="/cpu">
+        <= Return to All CPUs</a>
+</div>
 
 
-        <a href="/cpu/{{singleCpu._id}}/edit">
-            <button>
-                Update {{singleCpu.name}}
-            </button>
-        </a>
+<div class="list-item">
+    <div class="item">
+        <div>Manufacturer:</div>
+        <div class="item-value">{{singleCpu.brand}}</div>
+    </div>
+    <div class="item">
+        <div>Number of Cores:</div>
+        <div class="item-value">{{singleCpu.cores}}</div>
+    </div>
+    <div class="item">
+        <div>Frequency:</div>
+        <div class="item-value">{{singleCpu.frequency}}</div>
+    </div>
+    <div class="item">
+        <div>Hyperthreading Enabeled:</div>
+        <div class="item-value">{{singleCpu.hyperthreading}}</div>
+    </div>
+</div>
 
-        {{singleCpu.name}}
-        
-        <div class="title">Manufacturer:</div>
-        {{singleCpu.brand}}
-
-        <div class="title">Number of Cores:</div>
-        {{singleCpu.cores}}
-
-        <div class="title">Highest Core Frequency:</div>
-        {{singleCpu.frequency}}
-
-        <div class="title">Hyperthreading Enabled:</div>
-        {{singleCpu.hyperthreading}}
-
-        <form action="/cpu/{{singleCpu._id}}?_method=DELETE" method="POST">
-            <input type="submit" value="Delete {{singleCpu.name}}">
-        </form>
+<div class="footer">
+<a href="/cpu/{{singleCpu._id}}/edit">
+    <button class="footer-update">
+        Update {{singleCpu.name}}
+    </button>
+</a>
+<form action="/cpu/{{singleCpu._id}}?_method=DELETE" method="POST">
+    <input class="footer-delete" type="submit" value="Delete {{singleCpu.name}}">
+</form>
+</div>

@@ -1,25 +1,35 @@
+<div class="build-head">
+    <div class="build-head-title">{{singleGpu.name}}</div>
+    <a class="build-head-return" href="/gpu"> <= Return to All GPUs</a>
+</div>
 
 
-        <a href="/gpu/{{singleGpu._id}}/edit">
-            <button>
-                Update {{singleGpu.name}}
-            </button>
-        </a>
-        
-        {{name}}
+<div class="list-item">
+    <div class="item">
+        <div>Manufacturer:</div>
+        <div class="item-value">{{singleGpu.brand}}</div>
+    </div>
+    <div class="item">
+        <div>Card Series:</div>
+        <div class="item-value">{{singleGpu.series}}</div>
+    </div>
+    <div class="item">
+        <div>VRAM Capacity:</div>
+        <div class="item-value">{{singleGpu.memory}}</div>
+    </div>
+    <div class="item">
+        <div>VRAM Generation:</div>
+        <div class="item-value">{{singleGpu.ddr}}</div>
+    </div>
+</div>
 
-        <div class="title">Manufacturer:</div>
-        {{singleGpu.brand}}
-        
-        <div class="title">Card Series:</div>
-        {{singleGpu.series}}
-
-        <div class="title">VRAM Capacity:</div>
-        {{singleGpu.memory}}
-
-        <div class="title">VRAM Generation:</div>
-        {{singleGpu.ddr}}
-
-        <form action="/gpu/{{singleGpu._id}}?_method=DELETE" method="POST">
-            <input type="submit" value="Delete {{singleGpu.name}}">
-        </form>
+<div class="footer">
+<a href="/gpu/{{singleGpu._id}}/edit">
+    <button class="footer-update">
+        Update {{singleGpu.name}}
+    </button>
+</a>
+<form action="/gpu/{{singleGpu._id}}?_method=DELETE" method="POST">
+    <input class="footer-delete" type="submit" value="Delete {{singleGpu.name}}">
+</form>
+</div>

@@ -1,25 +1,35 @@
+<div class="build-head">
+    <div class="build-head-title">{{singleRam.name}}</div>
+    <a class="build-head-return" href="/ram"> <= Return to RAM Kits</a>
+</div>
 
 
-        <a href="/ram/{{singleRam._id}}/edit">
-            <button>
-                Update {{singleRam.name}}
-            </button>
-        </a>
-        
-        {{name}}
+<div class="list-item">
+    <div class="item">
+        <div>Manufacturer:</div>
+        <div class="item-value">{{singleRam.brand}}</div>
+    </div>
+    <div class="item">
+        <div>Memory Capacity:</div>
+        <div class="item-value">{{singleRam.memory}}</div>
+    </div>
+    <div class="item">
+        <div>Generation:</div>
+        <div class="item-value">{{singleRam.ddr}}</div>
+    </div>
+    <div class="item">
+        <div>Frequency:</div>
+        <div class="item-value">{{singleRam.frequency}}</div>
+    </div>
+</div>
 
-        <div class="title">Manufacturer:</div>
-        {{singleRam.brand}}
-
-        <div class="title">Memory Capacity:</div>
-        {{singleRam.memory}}
-
-        <div class="title">Generation:</div>
-        {{singleRam.ddr}}
-
-        <div class="title">Frequency:</div>
-        {{singleRam.frequency}}
-
-        <form action="/ram/{{singleRam._id}}?_method=DELETE" method="POST">
-            <input type="submit" value="Delete {{singleRam.name}}">
-        </form>
+<div class="footer">
+<a href="/ram/{{singleRam._id}}/edit">
+    <button class="footer-update">
+        Update {{singleRam.name}}
+    </button>
+</a>
+<form action="/ram/{{singleRam._id}}?_method=DELETE" method="POST">
+    <input class="footer-delete" type="submit" value="Delete {{singleRam.name}}">
+</form>
+</div>

@@ -1,25 +1,35 @@
+<div class="build-head">
+    <div class="build-head-title">{{singleFan.name}}</div>
+    <a class="build-head-return" href="/fan"> <= Return to All Case Fans & Radiators</a>
+</div>
 
 
-        <a href="/fan/{{singleFan._id}}/edit">
-            <button>
-                Update {{singleFan.name}}
-            </button>
-        </a>
-        
-        {{name}}
+<div class="list-item">
+    <div class="item">
+        <div>Manufacturer:</div>
+        <div class="item-value">{{singleFan.brand}}</div>
+    </div>
+    <div class="item">
+        <div>Fan Sizes:</div>
+        <div class="item-value">{{singleFan.size}}</div>
+    </div>
+    <div class="item">
+        <div>Quantity:</div>
+        <div class="item-value">{{singleFan.quantity}}</div>
+    </div>
+    <div class="item">
+        <div>Radiators:</div>
+        <div class="item-value">{{singleFan.wcRad}}</div>
+    </div>
+</div>
 
-        <div class="title">Manufacturer:</div>
-        {{singleFan.brand}}
-
-        <div class="title">Fan Sizes:</div>
-        {{singleFan.size}}
-
-        <div class="title">Quantity:</div>
-        {{singleFan.quantity}}
-
-        <div class="title">Radiators:</div>
-        {{singleFan.wcRad}}
-
-        <form action="/fan/{{singleFan._id}}?_method=DELETE" method="POST">
-            <input type="submit" value="Delete {{singleFan.name}}">
-        </form>
+<div class="footer">
+<a href="/fan/{{singleFan._id}}/edit">
+    <button class="footer-update">
+        Update {{singleFan.name}}
+    </button>
+</a>
+<form action="/fan/{{singleFan._id}}?_method=DELETE" method="POST">
+    <input class="footer-delete" type="submit" value="Delete {{singleFan.name}}">
+</form>
+</div>
