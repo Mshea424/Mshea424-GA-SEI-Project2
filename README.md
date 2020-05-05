@@ -4,7 +4,7 @@ deployed Web link
 https://ga-sei-project2.herokuapp.com/
 
 ERD:
-https://drive.google.com/file/d/1Lt8ZCfsZm7AQg3LgOtvW0kv5ktnidgRM/view?usp=sharing
+![](public/images/SEI_project2_ERD.jpg)
 
 Wireframes:
 ![](public/images/IMG_1933.jpg)
