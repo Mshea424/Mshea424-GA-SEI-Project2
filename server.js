@@ -25,7 +25,7 @@ server.use(express.json())
 server.use(express.static(__dirname + '/public'))
 
 
-server.use('/home', landingRouter)
+server.use('/', landingRouter)
 server.use('/cpu', cpuRouter)
 server.use('/mb', mbRouter)
 server.use('/psu', psuRouter)
