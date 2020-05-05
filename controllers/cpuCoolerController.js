@@ -1,12 +1,12 @@
 const express = require('express')
-const cpucoolerModel = require('../models/cpuCoolerModel.js')
-const cpucoolerRouter = express.Router()
+const cpuCoolerModel = require('../models/cpuCoolerModel.js')
+const cpuCoolerRouter = express.Router()
 
 // get All
-cpucoolerRouter.get('/', (req, res) =>{
-    cpucoolerModel.getAllCpuCoolers()
+cpuCoolerRouter.get('/', (req, res) =>{
+    cpuCoolerModel.getAllCpuCoolers()
     .then((allCpuCoolers) => {
-        res.render('cpucooler/allCpuCoolers.hbs', {allCpuCoolers})
+        res.render('cpuCooler/allCpuCoolers.hbs', {allCpuCoolers})
     })
     .catch(err => {
         console.log(err)
@@ -15,15 +15,15 @@ cpucoolerRouter.get('/', (req, res) =>{
 })
 
 //Go to Create new CpuCooler page
-cpucoolerRouter.get('/new', (req, res) =>{
-    res.render('cpucooler/createCpuCooler.hbs')
+cpuCoolerRouter.get('/new', (req, res) =>{
+    res.render('cpuCooler/createCpuCooler.hbs')
 })
 
 //Go To Edit CpuCooler Page
-cpucoolerRouter.get('/:id/edit', (req, res) => {
-    cpucoolerModel.getOneCpuCooler(req.params.id)
+cpuCoolerRouter.get('/:id/edit', (req, res) => {
+    cpuCoolerModel.getOneCpuCooler(req.params.id)
     .then((singleCpuCooler) => {
-        res.render('cpucooler/editCpuCooler.hbs', {singleCpuCooler})
+        res.render('cpuCooler/editCpuCooler.hbs', {singleCpuCooler})
     })
     .catch(err => {
         console.log(err)
@@ -33,10 +33,10 @@ cpucoolerRouter.get('/:id/edit', (req, res) => {
 
 
 // get ONE
-cpucoolerRouter.get('/:id', (req, res) => {
-    cpucoolerModel.getOneCpuCooler(req.params.id)
+cpuCoolerRouter.get('/:id', (req, res) => {
+    cpuCoolerModel.getOneCpuCooler(req.params.id)
     .then((singleCpuCooler) => {
-        res.render('cpucooler/singleCpuCooler.hbs', {singleCpuCooler})
+        res.render('cpuCooler/singleCpuCooler.hbs', {singleCpuCooler})
     })
     .catch(err => {
         console.log(err)
@@ -45,8 +45,8 @@ cpucoolerRouter.get('/:id', (req, res) => {
 })
 
 // CREATE
-cpucoolerRouter.post('/', (req, res) => {
-    cpucoolerModel.createCpuCooler(req.body)
+cpuCoolerRouter.post('/', (req, res) => {
+    cpuCoolerModel.createCpuCooler(req.body)
         .then(() => {
             res.redirect('/cpucooler')
         })
@@ -57,8 +57,8 @@ cpucoolerRouter.post('/', (req, res) => {
 })
 
 //UPDATE
-cpucoolerRouter.put('/:id', (req, res) => {
-    cpucoolerModel.updateCpuCooler(req.params.id, req.body)
+cpuCoolerRouter.put('/:id', (req, res) => {
+    cpuCoolerModel.updateCpuCooler(req.params.id, req.body)
         .then(() => {
             res.redirect(`/cpucooler/${req.params.id}`)
         })
@@ -70,8 +70,8 @@ cpucoolerRouter.put('/:id', (req, res) => {
 
 
 //DELETE
-cpucoolerRouter.delete('/:id', (req, res) => {
-    cpucoolerModel.deleteCpuCooler(req.params.id)
+cpuCoolerRouter.delete('/:id', (req, res) => {
+    cpuCoolerModel.deleteCpuCooler(req.params.id)
         .then(() => {
             res.redirect('/cpucooler')
         })
@@ -81,4 +81,4 @@ cpucoolerRouter.delete('/:id', (req, res) => {
         })
 })
 
-module.exports = cpucoolerRouter
+module.exports = cpuCoolerRouter
