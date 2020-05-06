@@ -1,37 +1,37 @@
 const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
 
-const gpucoolerSchema = new Schema({
+const gpuCoolerSchema = new Schema({
     name: String,
     brand: String,
     type: String,
 })
 
-const gpucoolerList = mongoose.model('gpucooler', gpucoolerSchema)
+const gpuCoolerList = mongoose.model('gpucooler', gpuCoolerSchema)
 
 // get/read all
 function getAllGpuCoolers() {
-    return gpucoolerList.find({})
+    return gpuCoolerList.find({})
 }
 
 // get/read one
 function getOneGpuCooler(id) {
-    return gpucoolerList.findById(id)
+    return gpuCoolerList.findById(id)
 }
 
 // post/create
 function createGpuCooler(newGpuCooler) {
-return gpucoolerList.create(newGpuCooler)
+return gpuCoolerList.create(newGpuCooler)
 }
 
 // put/update
 function updateGpuCooler(id, newGpuCooler) {
-    return gpucoolerList.findByIdAndUpdate(id, newGpuCooler)
+    return gpuCoolerList.findByIdAndUpdate(id, newGpuCooler)
 }
 
 // delete
 function deleteGpuCooler(id) {
-    return gpucoolerList.findByIdAndDelete(id)
+    return gpuCoolerList.findByIdAndDelete(id)
 }
 
 module.exports = {

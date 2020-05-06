@@ -1,12 +1,12 @@
 const express = require('express')
-const gpucoolerModel = require('../models/gpuCoolerModel.js')
-const gpucoolerRouter = express.Router()
+const gpuCoolerModel = require('../models/gpuCoolerModel.js')
+const gpuCoolerRouter = express.Router()
 
 // get All
-gpucoolerRouter.get('/', (req, res) =>{
-    gpucoolerModel.getAllGpuCoolers()
+gpuCoolerRouter.get('/', (req, res) =>{
+    gpuCoolerModel.getAllGpuCoolers()
     .then((allGpuCoolers) => {
-        res.render('gpucooler/allGpuCoolers.hbs', {allGpuCoolers})
+        res.render('gpuCooler/allGpuCoolers.hbs', {allGpuCoolers})
     })
     .catch(err => {
         console.log(err)
@@ -15,15 +15,15 @@ gpucoolerRouter.get('/', (req, res) =>{
 })
 
 //Go to Create new GpuCooler page
-gpucoolerRouter.get('/new', (req, res) =>{
-    res.render('gpucooler/createGpuCooler.hbs')
+gpuCoolerRouter.get('/new', (req, res) =>{
+    res.render('gpuCooler/createGpuCooler.hbs')
 })
 
 //Go To Edit GpuCooler Page
-gpucoolerRouter.get('/:id/edit', (req, res) => {
-    gpucoolerModel.getOneGpuCooler(req.params.id)
+gpuCoolerRouter.get('/:id/edit', (req, res) => {
+    gpuCoolerModel.getOneGpuCooler(req.params.id)
     .then((singleGpuCooler) => {
-        res.render('gpucooler/editGpuCooler.hbs', {singleGpuCooler})
+        res.render('gpuCooler/editGpuCooler.hbs', {singleGpuCooler})
     })
     .catch(err => {
         console.log(err)
@@ -33,10 +33,10 @@ gpucoolerRouter.get('/:id/edit', (req, res) => {
 
 
 // get ONE
-gpucoolerRouter.get('/:id', (req, res) => {
-    gpucoolerModel.getOneGpuCooler(req.params.id)
+gpuCoolerRouter.get('/:id', (req, res) => {
+    gpuCoolerModel.getOneGpuCooler(req.params.id)
     .then((singleGpuCooler) => {
-        res.render('gpucooler/singleGpuCooler.hbs', {singleGpuCooler})
+        res.render('gpuCooler/singleGpuCooler.hbs', {singleGpuCooler})
     })
     .catch(err => {
         console.log(err)
@@ -45,8 +45,8 @@ gpucoolerRouter.get('/:id', (req, res) => {
 })
 
 // CREATE
-gpucoolerRouter.post('/', (req, res) => {
-    gpucoolerModel.createGpuCooler(req.body)
+gpuCoolerRouter.post('/', (req, res) => {
+    gpuCoolerModel.createGpuCooler(req.body)
         .then(() => {
             res.redirect('/gpucooler')
         })
@@ -57,8 +57,8 @@ gpucoolerRouter.post('/', (req, res) => {
 })
 
 //UPDATE
-gpucoolerRouter.put('/:id', (req, res) => {
-    gpucoolerModel.updateGpuCooler(req.params.id, req.body)
+gpuCoolerRouter.put('/:id', (req, res) => {
+    gpuCoolerModel.updateGpuCooler(req.params.id, req.body)
         .then(() => {
             res.redirect(`/gpucooler/${req.params.id}`)
         })
@@ -70,8 +70,8 @@ gpucoolerRouter.put('/:id', (req, res) => {
 
 
 //DELETE
-gpucoolerRouter.delete('/:id', (req, res) => {
-    gpucoolerModel.deleteGpuCooler(req.params.id)
+gpuCoolerRouter.delete('/:id', (req, res) => {
+    gpuCoolerModel.deleteGpuCooler(req.params.id)
         .then(() => {
             res.redirect('/gpucooler')
         })
@@ -81,4 +81,4 @@ gpucoolerRouter.delete('/:id', (req, res) => {
         })
 })
 
-module.exports = gpucoolerRouter
+module.exports = gpuCoolerRouter
